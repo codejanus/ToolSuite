@@ -1,0 +1,38 @@
+
+**************************
+** ENGLISH - 04/03/2014 **
+
+Project/Software name: MultiObfuscator v2.00
+Contact: "EmbeddedSW" <embedded@embeddedsw.net>
+Company: EmbeddedSW.net
+
+THIS IS A FREEWARE SOFTWARE
+
+This software is released under:
+
+* CC-BY 4.0: http://creativecommons.org/licenses/by/4.0/
+
+You’re free to copy, distribute and make commercial use
+of this software under the following conditions:
+
+* You have to cite the author (and copyright owner): EmbeddedSW.net
+* You have to provide a link to the author’s Homepage: http://www.embeddedsw.net
+
+***************************
+** ITALIANO - 04/03/2014 **
+
+Progetto/Nome del software: MultiObfuscator v2.00
+Contatto: "EmbeddedSW" <embedded@embeddedsw.net>
+Compagnia: EmbeddedSw.net
+
+QUESTO È UN SOFTWARE FREEWARE
+
+Questo software è rilasciato con licenza:
+
+* CC-BY 4.0: http://creativecommons.org/licenses/by/4.0/
+
+Siete liberi di copiare, distribuire e fare uso
+commerciale di questo software alle seguenti condizioni:
+
+* Dovete citare l’autore (e detentore del copyright): EmbeddedSW.net
+* Dovete fornire un link alla Homepage dell’autore: http://www.embeddedsw.net

@@ -1,0 +1,133 @@
+mgraffam@mhv.net writes:
+
+> I figure the best we can do is to hide the contents of S with crypto and
+> hide its existence through other means. Traditional stego works well 
+> for this latter goal, but it does not give us a way to cough up something
+> meaningful in place of S, which could be very handy.
+> 
+> In short, certainly the existence of S needs to be hidden, and it would be
+> best to do hide it in plain sight as it were, in a big junk pile with
+> everything else on the drive. 
+> 
+> Indexing this huge mess of data to allow for a practical system to work
+> with is certainly a challenge, and in all likelyhood impossible given the
+> parameters of the system.
+> 
+
+Rubberhose (our rubber-hose proof filing system) addresses most of these
+technical issues, but I'd like to just comment on the best strategy
+game-theory wise, for the person wielding the rubber-hose.
+
+In Rubberhose the number of encrypted aspects (deniable "virtual"
+partitions) defaults to 16 (although is theoretically unlimited). As
+soon as you have over 4 pass-phrases, the excuse "I can't recall"
+or "there's nothing else there" starts to sound highly plauseable.
+
+Ordinarily best strategy for the rubber-hose wielder is to keep on
+beating keys out of (let us say, Alice) indefinitely till there are no
+keys left. However, and importantly, in Rubberhose, *Alice* can never
+prove that she has handed over the last key. As Alice hands over more
+and more keys, her attackers can make observations like "the keys
+Alice has divulged correspond to 85% of the bits". However at no point
+can her attackers prove that the remaining 15% don't simply pertain to
+unallocated space, and at no point can Alice, even if she wants to,
+divulge keys to 100% of the bits, in order to bring the un-divulged
+portion down to 0%. An obvious point to make here is that
+fraction-of-total-data divulged is essentially meaningless, and both
+parties know it - the launch code aspect may only take up .01% of the
+total bit-space.
+
+What I find interesting, is how this constraint on Alice's behaviour
+actually protects her from revealing her own keys, because each party,
+at the outset can make the following observations:
+
+Rubber-hose-squad: We will never be able to show that Alice has
+		   revealed the last of her keys. Further, even if
+		   Alice has co-operated fully and has revealed all of
+		   her keys, she will not be able to prove it.
+		   Therefor, we must assume that at every stage that
+		   Alice has kept secret information from us, and
+		   continue to beat her, even though she may have
+		   revealed the last of her keys. But the whole time
+		   we will feel uneasy about this because Alice may
+		   have co-operated fully. Alice will have realised this
+		   though, and so presumably it's going to be very hard
+		   to get keys out of her at all.
+
+
+Alice:		   (Having realised the above) I can never prove that I
+		   have revealed the last of my keys. In the end I'm
+		   bound for continued beating, even if I can buy
+		   brief respites by coughing up keys from time to
+		   time. Therefor, it would be foolish to divulge my
+		   most sensitive keys, because (a) I'll be that much
+		   closer to the stage where I have nothing left to
+		   divulge at all (it's interesting to note that this
+		   seemingly illogical, yet entirely valid argument of
+		   Alice's can protect the most sensitive of Alice's
+		   keys the "whole way though", like a form
+		   mathematical induction), and (b) the taste of truly
+		   secret information will only serve to make my
+		   aggressors come to the view that there is even
+		   higher quality information yet to come, re-doubling
+		   their beating efforts to get at it, even if I have
+		   revealed all. Therefor, my best strategy would be
+		   to (a) reveal no keys at all or (b) depending on
+		   the nature of the aggressors, and the psychology of
+		   the situation, very slowly reveal my "duress" and
+		   other low-sensitivity keys.
+
+Alice certainly isn't in for a very nice time of it (although she
+she's far more likely to protect her data).
+
+On the individual level, you would have to question whether you might
+want to be able to prove that, yes, infact you really have surrendered
+the last remaining key, at the cost of a far greater likelihood that
+you will. It really depends on the nature of your opponents.  Are they
+intelligent enough understand the deniable aspect of the cryptosystem
+and come up with the above strategy? Determined to the aspect they
+are willing to invest the time and effort in wresting the last key out of
+you? Ruthless - do they say "Please", hand you a Court Order, or is it
+more of a Room 101 affair?
+
+But there's more to the story.
+
+Organisations and groups may have quite different strategic goals in
+terms of key retention vs torture relief to the individuals that
+comprise them, even if their views are otherwise co-aligned.
+A simple democratic union of two or more people will exhibit this behaviour.
+
+When a member of a group, who uses conventional cryptography to
+protect group secrets is rubber-hosed, they have two choices (1)
+defecting (by divulging keys) in order to save themselves, at the cost
+of selling the other individuals in the group down the river or (2)
+staying loyal, protecting the group and in the process subjugating
+themselves to continued torture.
+
+With Rubberhose-style deniable cryptography, the benefits to a group
+memember from choosing tactic 1 (defection). are subdued, because
+they will never be able to convince their interrogators that they have
+defected.  Rational individuals that are `otherwise loyal'" to the
+group, will realise the minimal gains to be made in chosing defection
+and choose tactic 2 (loyalty), instead.
+
+Presumably most people in the group do not want to be forced to give
+up their ability to choose defection. On the other hand, no one in the
+group wants anyone (other than themselves) in the group to be given
+the option of defecting against the group (and thus the person making
+the observation). Provided no individual is certain* they are to be
+rubber-hosed, every individual will support the adoption of a
+group-wide Rubberhose-style cryptographically deniable crypto-system.
+This property is communitive, while the individual's desire to be able
+to choose defection is not. The former every group member wants for
+every other group memeber, but not themselves. The latter each group
+memeber wants only for themself.
+
+* "certain" is a little misleading. Each individual has a threshold
+  which is not only proportional to the the perceived likely hood
+  of being rubberhosed over ones dislike of it, but also includes
+  the number of indviduals in the group, the damage caused by a
+  typical defection to the other members of the group etc.
+
+Cheers,
+Julian

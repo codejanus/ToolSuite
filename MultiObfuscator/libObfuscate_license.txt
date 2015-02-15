@@ -1,0 +1,38 @@
+
+**************************
+** ENGLISH - 04/03/2014 **
+
+Project: libObfuscate v2.00
+Contact: "EmbeddedSW" <embedded@embeddedsw.net>
+Company: EmbeddedSW.net
+
+THIS IS A FREE SOFTWARE
+
+This software is released under:
+
+* LGPL 3.0: http://www.gnu.org/licenses/lgpl.html
+
+You’re free to copy, distribute and make commercial use
+of this software under the following conditions:
+
+* You have to cite the author (and copyright owner): EmbeddedSW.net
+* You have to provide a link to the author’s Homepage: http://www.embeddedsw.net
+
+***************************
+** ITALIANO - 04/03/2014 **
+
+Progetto: libObfuscate v2.00
+Contatto: "EmbeddedSW" <embedded@embeddedsw.net>
+Compagnia: EmbeddedSw.net
+
+QUESTO È UN SOFTWARE LIBERO
+
+Questo software è rilasciato con licenza:
+
+* LGPL 3.0: http://www.gnu.org/licenses/lgpl.html
+
+Siete liberi di copiare, distribuire e fare uso
+commerciale di questo software alle seguenti condizioni:
+
+* Dovete citare l’autore (e detentore del copyright): EmbeddedSW.net
+* Dovete fornire un link alla Homepage dell’autore: http://www.embeddedsw.net
