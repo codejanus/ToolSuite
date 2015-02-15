@@ -1,0 +1,1983 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/1998/REC-html40-19980424/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Self Incrimination and Cryptographic Keys</title>
+<style>
+{ line-height:17px; padding:0px 0px 0px 0px; margin:5px 5px 5px 5px; }
+ * { font-family:"Times New Roman", normal; color:#000000; }
+h1 { line-height:125%; font-size:24px; font-weight:normal; margin:20px 0 10px 0; }
+h2 { line-height:125%; font-size:20px; font-weight:normal; margin:20px 0 10px 0; }
+h3 { line-height:125%; font-size:16px; font-weight:normal; margin:20px 0 10px 0; }
+a { color:#0000FF; }
+</style>
+</head>
+
+<body bgcolor="#ffffff" link="#990000" vlink="#999999">
+
+<h1 align=center>Self Incrimination and Cryptographic Keys</h1>
+
+<h3 align=center>
+<i>By Greg S. Sergienko: <a href="http://jolt.richmond.edu/v2i1/sergienko.html">Published: February 13, 1996</a></i><br>
+<i>Hosted at: <a href="http://embeddedsw.net/OpenPuff_Steganography_Home.html">EmbeddedSw.net - OpenPuff</a></i><br>
+<i>Hosted at: <a href="http://embeddedsw.net/MultiObfuscator_Cryptography_Home.html">EmbeddedSw.net - MultiObfuscator</a></i>
+</h3>
+
+<h3 align=center>Cite As: Greg S. Sergienko,
+<i>Self Incrimination and Cryptographic Keys</i>, 2 RICH.
+J.L. &amp; TECH. 1 (1996).</h3>
+
+<h3></h3><center><hr size="3" width="300"></center><h3></h3>
+
+<h3><a name="t1"></a><a href="#h1">I. Introduction</a></h3>
+
+<h3><a name="t2"></a><a href="#h2">II. The Fifth Amendment and
+the Compulsory Production of Cryptographic Keys</a></h3>
+
+<blockquote>
+  <h3><a name="t2a"></a><a href="#h2a">A. Accessibility of Documents
+  Under the Fourth and Fifth Amendments</a></h3>
+  <h3><a name="t2b"></a><a href="#h2b">B. Fifth Amendment Testimoniality
+  and the Production of a Memorized Cryptographic Key</a></h3>
+  <h3><a name="t2c"></a><a href="#h2c">C. The Scope of Immunity
+  from the Compelled Production of the Key</a></h3>
+  <blockquote>
+    <h3><a name="t2c1"></a><a href="#h2c1">1. Derivative Use Immunity
+    for Documents Produced with a Cryptographic Key</a></h3>
+    <h3><a name="t2c2"></a><a href="#h2c2">2. Immunity as a Result
+    of the Special Properties of Cryptographic Keys</a></h3>
+    <blockquote>
+      <h3><a name="t2c2a"></a><a href="#h2c2a">a. Creation of Communicative
+      Content Through Decryption</a></h3>
+      <h3><a name="t2c2b"></a><a href="#h2c2b">b. Authentication Through
+      Decryption</a></h3>
+    </blockquote>
+    <h3><a name="t2c3"></a><a href="#h2c3">3. Conclusion</a></h3>
+  </blockquote>
+</blockquote>
+
+<h3><a name="t3"></a><a href="#h3">III. The Advantages of a Traditional
+Solution</a></h3>
+
+<blockquote>
+  <h3><a name="t3a"></a><a href="#h3a">A. Search and Seizure Under
+  "Boyd v. United States"</a></h3>
+  <h3><a name="t3b"></a><a href="#h3b">B. Implications of the Rejection
+  of "Boyd"</a></h3>
+  <blockquote>
+    <h3><a name="t3b1"></a><a href="#h3b1">1. Rejection of Precedents</a></h3>
+    <h3><a name="t3b2"></a><a href="#h3b2">2. Inconsistencies with
+    Other Authority on Privilege</a></h3>
+    <h3><a name="t3b3"></a><a href="#h3b3">3. Privacy and Property
+    Rights</a></h3>
+  </blockquote>
+</blockquote>
+
+<h3><a name="t4"></a><a href="#h4">IV. Conclusion</a></h3>
+
+<h3></h3><center><hr size="3" width="300"></center><h3></h3>
+
+<h3></h3><center><a name="I"></a></center><h3></h3>
+
+<h2 align=center><a name="h1"></a><a href="#t1">I. Introduction</a></h2>
+
+<h3><a name="para1"></a>{1} The Fifth Amendment commands that no
+person "shall be compelled in any criminal case to be a witness
+against himself."<a name="fnref1"></a><a href="#fn1">[1]</a>
+However, extending current judicial interpretations of the Fourth
+and Fifth Amendments too far may allow the government easy access
+even to private documents, making one's diary and other documents
+accessible and admissible in court against their author.</h3>
+
+<h3><a name="para2"></a>{2} What the Court has taken away, technology
+has given. Modern cryptography can make it virtually impossible
+to decipher documents without the cryptographic key,<a name="fnref2"></a><a href="#fn2">[2]</a> thus making the availability of the contents
+of those documents depend on the availability of the key. This
+article examines the Fourth and Fifth Amendments' protection against
+the compulsory production of the key and the scope of the Fifth
+Amendment immunity against compelled production. After analyzing
+these questions using prevailing Fourth and Fifth Amendment jurisprudence,
+I shall describe the advantages of a privacy-based approach in
+practical and constitutional terms.</h3>
+
+<h3></h3><center><a name="h2"></a></center><h3></h3>
+
+<h2 align=center><a href="#t2">II. The Fifth Amendment and the Compulsory
+Production of Cryptographic Keys</a></h2>
+
+<h3><a name="IIA"></a></h3>
+
+<h3><a name="h2a"></a><a href="#t2a">A. Accessibility of Documents
+Under the Fourth and Fifth Amendments</a></h3>
+
+<h3><a name="para3"></a>{3} The Fourth Amendment provides little
+protection from the search and seizure of documents. In <i>Warden
+v. Hayden</i>,<a name="fnref3"></a><a href="#fn3">[3]</a> the
+Court discarded the rule that the power to search and seize depended
+on the assertion of a superior right to the property seized. Before
+<i>Warden</i>,<i> </i>officers could search for fruits of a crime,
+because a superior right was in the property owners; for contraband,
+because no one could legally own contraband; and for instrumentalities,
+because their role in the commission of the crime made them forfeitable;
+but could not search for mere evidence.<a name="fnref4"></a><a href="#fn4">[4]</a> Because, for example, diaries are "mere
+evidence," the <i>Warden </i>rule potentially could allow
+search warrants to seize diaries and other purely private documents.
+Although <i>Warden</i> expressly refused to consider "whether
+there are items of evidential value whose very nature precludes
+them from being the object of a reasonable search and seizure,"<a name="fnref5"></a><a href="#fn5">[5]</a> many now believe that
+all objects can be seized.<a name="fnref6"></a><a href="#fn6">[6]</a></h3>
+
+<h3><a name="para4"></a>{4} The Fifth Amendment's guarantee against
+self incrimination also provides little protection for existing
+documents. The Court generally interprets the Fifth Amendment
+to allow the government to compel the <i>production</i> of these
+documents, because the government did not compel anyone to <i>write
+</i>the documents.<a name="fnref7"></a><a href="#fn7">[7]</a>
+Thus, the government can compel the production of documents and,
+if written, the key encrypting the documents. Although there may
+still be some protection for private documents, such protection
+is uncertain in its existence and narrow in its scope.<a name="fnref8"></a><a href="#fn8">[8]</a></h3>
+
+<h3><a name="para5"></a>{5} Under the <i>Warden</i> view and Fifth
+Amendment jurisprudence, written cryptographic keys cannot be
+distinguished from the documents themselves. If the key is found
+by a search, it can be used. If one can subpoena the underlying
+documents, one can subpoena the key.</h3>
+
+<h3><a name="para6"></a>{6} In this section, I shall assume the
+correctness of Justice O'Connor's belief that there is now no
+Fourth or Fifth Amendment obstacle to the compulsory production
+of existing documents, whether text, encrypted text, or cryptographic
+key.<a name="fnref9"></a><a href="#fn9">[9]</a> This means that
+the basis of protection must be an assertion of Fifth Amendment
+privilege against a question asking one to disclose a memorized
+cryptographic key.</h3>
+
+<h3><a name="IIB"></a></h3>
+
+<h3><a name="h2b"></a><a href="#t2b">B. Fifth Amendment Testimoniality
+and the Production of a Memorized Cryptographic Key</a></h3>
+
+<h3><a name="para7"></a>{7} Because current law may hold that the
+underlying, pre-existing documents can be the subject of a search
+or subpoena, Fifth Amendment analysis must focus on the disclosure
+of the cryptographic key on the assumption that the key is not
+written down. The Fifth Amendment is now interpreted to bar only
+the production of "testimonial information,"<a name="fnref10"></a><a href="#fn10">[10]</a> so the protection of the Fifth Amendment
+extends only to an incriminating communication that might "itself,
+explicitly or implicitly, relate a factual assertion or disclose
+information."<a name="fnref11"></a><a href="#fn11">[11]</a></h3>
+
+<h3><a name="para8"></a>{8} A non-cryptographic key is physical
+evidence, not testimonial evidence.<a name="fnref12"></a><a href="#fn12">[12]</a>
+Thus, the Court has upheld both a Fourth Amendment seizure<a name="fnref13"></a><a href="#fn13">[13]</a> and the compulsory
+production of such non-testimonial evidence, such as a blood sample<a name="fnref14"></a><a href="#fn14">[14]</a> or the performance
+of sobriety tests that do not involve communication.<a name="fnref15"></a><a href="#fn15">[15]</a></h3>
+
+<h3><a name="para9"></a>{9} A cryptographic key need not have testimonial
+content. A key can be any word, phrase, or a series of randomly
+chosen digits. However, one can imagine a cryptographic key that
+has been given an incriminating, testimonial content by making
+it a word or phrase that confesses to a crime. Many seldom-enforced
+statutes<a name="fnref16"></a><a href="#fn16">[16]</a> enable
+one to confess to a crime in one's cryptographic key, thereby
+triggering potential criminal liability and therefore the protection
+of the Fifth Amendment,<a name="fnref17"></a><a href="#fn17">[17]</a>
+without incurring much risk of prosecution or of social obloquy
+should the key leak or the Fifth Amendment argument be rejected.
+However, many keys will not confess to a crime. So, while this
+may be a factor for the prudent in selecting particular cryptographic
+keys, it cannot be relied upon to resolve the problems before
+the courts.<a name="fnref18"></a><a href="#fn18">[18]</a></h3>
+
+<h3><a name="para10"></a>{10} Because a cryptographic key need
+not be testimonial and will ordinarily not be testimonial, it
+might be argued that the disclosure of the key could be compelled
+without raising Fifth Amendment issues. Why should a cryptographic
+key be protected from production if a non-cryptographic key such
+as the key to a safe, is not?<a name="fnref19"></a><a href="#fn19">[19]</a></h3>
+
+<h3><a name="para11"></a>{11} The difficulty in distinguishing
+the two cases is exacerbated by the ability of circumstances to
+cause the same information to be expressed in testimonial and
+non-testimonial ways. For example, producing a key to a safe implicitly
+asserts that the key I turn over is the key to the safe and implicitly
+admits my control over the key. These implicit admissions cannot
+be used against the producer of the key. However, the key itself
+will not be suppressed. One could easily consider the production
+of the key an implicit description of the shape of the key, perhaps
+in a standardized form common to locksmiths, in which case I have
+made a testimonial assertion about the key and the relation of
+the key so described to the safe that the key opened.</h3>
+
+<h3><a name="para12"></a>{12} Despite the functional identity between
+these keys, the Court has already suggested in dictum that there
+is a fine line that distinguishes testimonial from non-testimonial
+compulsion. In <i>Doe v. United States (Doe II)</i>, the Court
+recognized that "be[ing] compelled to reveal the combination
+to his wall safe" would be testimonial compulsion, but suggested
+that the key to a strongbox containing incriminating documents
+would not be.<a name="fnref20"></a><a href="#fn20">[20]</a></h3>
+
+<h3><a name="para13"></a>{13} The Court's conclusion in <i>Doe
+II</i> appears to be consistent with its other cases. The argument
+that the Fifth Amendment allows the compulsory disclosure of a
+combination confuses the requirement that the statement be testimonial
+with the argument that the Fifth Amendment requires that the thing
+about which the statement is made be testimonial. Although the
+key has no testimonial content, a statement concerning the key
+is testimonial. The same would be true of a murder weapon. The
+murder weapon itself is not testimonial, but the suspect's statement
+about the location of the murder weapon would be testimonial.
+So, too, would the disclosure of the key associated with particular
+encrypted documents be testimonial. Thus, if a custom-designed
+chip included the key in hardware or firmware, the production
+of the chip could be compelled, just as physical evidence or a
+pre-existing document could be compelled.</h3>
+
+<h3><a name="para14"></a>{14} The difficulties with the boundary
+line the Court has drawn between testimonial and non-testimonial
+information are not unique to cryptographic keys. For example,
+although evidence about someone's physical state is not considered
+testimonial information, the use of heart rate and skin resistance
+as part of a polygraph test might well be considered testimonial.
+"[E]ven a subject unwilling throughout would presumably provide
+revealing lie-detector responses if bombarded by words meaningful
+in the context of the crime being investigated-'hammer!' 'club!'
+'wrench!' 'pipe!'"<a name="fnref21"></a><a href="#fn21">[21]</a>
+The Supreme Court suggested in <i>Schmerber </i>that the results
+of such a test would be inadmissible:</h3>
+
+<blockquote>
+  <h3>Some tests seemingly directed to obtain "physical evidence,"
+  for example, lie detector tests measuring changes in body function
+  during interrogation, may actually be directed to eliciting responses
+  which are essentially testimonial. To compel a person to submit
+  to testing in which an effort will be made to determine his guilt
+  or innocence on the basis of physiological responses, whether
+  willed or not, is to evoke the spirit and history of the Fifth
+  Amendment. Such situations call to mind the principle that the
+  protection of the privilege "is as broad as the mischief
+  against which it seeks to guard."<a name="fnref22"></a><a href="#fn22">[22]</a></h3>
+</blockquote>
+
+<h3><a name="para15"></a>{15} Conversely, testimonial information
+sought not for the truth of the information, but to reveal an
+underlying physical state, is inadmissible under the Fifth Amendment.
+<i>Pennsylvania v. Muniz</i><a name="fnref23"></a><a href="#fn23">[23]</a>
+involved a videotape of someone who had been arrested for drunk
+driving. At one point, the defendant's interrogator asked him
+when his sixth birthday was.<a name="fnref24"></a><a href="#fn24">[24]</a>
+The questioner was not interested in the actual date of the birthday,
+but in "the incriminating inference of impaired mental faculties
+. . . from a testimonial aspect of that response."<a name="fnref25"></a><a href="#fn25">[25]</a> Although the inquisitor was not interested
+in obtaining a truthful answer, the Supreme Court held that the
+question implicated the Fifth Amendment.<a name="fnref26"></a><a href="#fn26">[26]</a></h3>
+
+<h3><a name="para16"></a>{16} These boundary lines cannot easily
+be extended to make disclosure of cryptographic keys non-testimonial.
+Ambiguities could be used to extend the Fifth Amendment to the
+production of implicitly testimonial conduct, such as the production
+of safe keys. However, to hold that an expressly assertive statement
+was non-testimonial would effectively eliminate the Fifth Amendment's
+protection against self-incrimination. A cryptographic key can
+be likened to testimonial statements. Consequently, it seems safe
+to conclude that the compulsory production of a cryptographic
+key implicates the Fifth Amendment.</h3>
+
+<h3><a name="IIC"></a></h3>
+
+<h3><a name="h2c"></a><a href="#t2c">C. The Scope of Immunity
+from the Compelled Production of the Key</a></h3>
+
+<h3><a name="para17"></a>{17} If, as the above argument suggests,
+the identification of the key is testimonial, the critical issue
+will be the extent of the immunity necessary to satisfy the Fifth
+Amendment's proscription of self-incrimination.<a name="fnref27"></a><a href="#fn27">[27]</a> The federal government has suggested that
+it will seek to grant immunity as a tool for discovering encrypted
+documents.<a name="fnref28"></a><a href="#fn28">[28]</a> Does
+immunity extend only to the key or does it also cover the decrypted
+document produced by applying the key to the encrypted text?</h3>
+
+<h3><a name="IIC1"></a></h3>
+
+<h3><a name="h2c1"></a><a href="#t2c1">1. Derivative Use Immunity
+for Documents Produced with a Cryptographic Key</a></h3>
+
+<h3><a name="para18"></a>{18} The Supreme Court has distinguished
+between incriminating documents, which may not be protected by
+the privilege, and the incriminating aspects of producing the
+documents, from which one may claim Fifth Amendment immunity even
+if the documents themselves are uncovered.<a name="fnref29"></a><a href="#fn29">[29]</a> Thus, in <i>United States v. Doe (Doe I)</i>,
+the Court held that the production of individual tax records in
+the individual's possession might have testimonial and self-incriminating
+aspects such that their production could only be required through
+a grant of use immunity.<a name="fnref30"></a><a href="#fn30">[30]</a>
+Although it has been suggested that derivative immunity for encrypted
+documents would follow as a matter of course from the production
+of the key,<a name="fnref31"></a><a href="#fn31">[31]</a> this
+line of cases suggests otherwise.</h3>
+
+<h3><a name="para19"></a>{19} The leading authority here is Justice
+White's opinion for the Court in <i>Fisher</i>, which discusses
+the testimonial aspects of production as though the courts could
+compel production so long as the amount of self-incrimination
+is not excessive.<a name="fnref32"></a><a href="#fn32">[32]</a>
+The same sort of reasoning appears in other cases, even when those
+cases have resolved this analysis in favor of the individual.
+For example, in<i> Doe I</i>, the Court upheld a refusal to comply
+with a subpoena absent a grant of immunity because the incriminating
+effects of production were not "trivial."<a name="fnref33"></a><a href="#fn33">[33]</a> <i>Doe I</i> distinguished <i>Fisher</i>
+as a case where "the act of production would have only minimal
+testimonial value and would not operate to incriminate the taxpayer."<a name="fnref34"></a><a href="#fn34">[34]</a></h3>
+
+<h3><a name="para20"></a>{20} <i>Fisher</i> did not address the
+issue of derivative use immunity where the government would not
+have found the documents without a subpoena. This is because <i>Fisher</i>
+involved a situation in which the government could certainly get
+the documents without the aid of the subpoena. "The existence
+and location of the papers are a foregone conclusion and the taxpayer
+adds little or nothing to the sum total of the Government's information
+by conceding that he in fact has the papers."<a name="fnref35"></a><a href="#fn35">[35]</a> Because the government did not need the
+subpoena to get the papers, it had sufficiently shown an independent
+route to the papers to make them admissible without violation
+of the Fifth Amendment.</h3>
+
+<h3><a name="para21"></a>{21} It is not certain that the Court
+still follows this narrow view of <i>Fisher</i>. In<i> Braswell
+v. United States</i>, a case following <i>Fisher</i>, the dissent
+argued without opposition from the majority that documents produced
+pursuant to a claim of privilege could nonetheless be used against
+the producer, so long as the testimonial effect of the production
+itself was shielded.<a name="fnref36"></a><a href="#fn36">[36]</a></h3>
+
+<h3><a name="para22"></a>{22} On the other hand, the Court has
+not held that documents compulsorily produced can automatically
+be used against the producer. <i>Fisher </i>does discuss the actual
+effect of production; the facts of the case, in which the papers
+were initially in the hands of the accountant, support the Court's
+conclusion that the production of the papers did not increase
+the government's information. Nothing in <i>Fisher</i>, then,
+can be interpreted to mean that the Fifth Amendment allows the
+derivative use of documents which the government could not independently
+find and authenticate.<a name="fnref37"></a><a href="#fn37">[37]</a>
+<i>Doe I</i>, subsequent to <i>Fisher</i>, held that the documents
+in question need not have been produced,<a name="fnref38"></a><a href="#fn38">[38]</a> and in the absence of a request for use
+immunity, the Court did not deal with the issue of derivative
+use immunity.<a name="fnref39"></a><a href="#fn39">[39]</a> <i>Doe
+II</i>, also subsequent to <i>Fisher</i>, involved the compulsory
+signing of a directive to foreign banks without admitting any
+information.<a name="fnref40"></a><a href="#fn40">[40]</a> Because
+the Court held that this did not implicate the Fifth Amendment,
+that case also did not involve any issue of derivative use immunity.
+In <i>Braswell</i> the underlying documents were corporate records
+and therefore not privileged,<a name="fnref41"></a><a href="#fn41">[41]</a>
+so derivative use immunity could not apply.</h3>
+
+<h3><a name="para23"></a>{23} If the broad reading of <i>Fisher</i>
+is correct, the presumable basis for <i>Fisher's</i> apparent
+conclusion is that the documents themselves do not implicate the
+Fifth Amendment because they were not produced under compulsion.
+This, of course, makes perfect sense with regard to the documents
+considered as original objects of discovery under a search and
+seizure permitted by the Fourth Amendment.</h3>
+
+<h3><a name="para24"></a>{24} However, it neglects the Court's
+usual requirement that immunity extend to the derivative use of
+any compelled information. The leading case, <i>Kastigar v. United
+States</i>, establishes the general rule that the grant of immunity
+must include "derivative use immunity": immunity from
+"any use, direct or indirect, of the compelled testimony
+and any information derived therefrom . . . ."<a name="fnref42"></a><a href="#fn42">[42]</a> <i>Kastigar</i> "prohibits the prosecutorial
+authorities from using the compelled testimony in <i>any</i> respect."<a name="fnref43"></a><a href="#fn43">[43]</a> The burden is on the
+prosecution, which has "the affirmative duty to prove that
+the evidence it proposes to use is derived from a legitimate source
+wholly independent of the compelled testimony."<a name="fnref44"></a><a href="#fn44">[44]</a> Thus, use immunity expressly prohibits using
+testimony "as an 'investigatory lead'" or using "any
+evidence obtained by focusing investigation on a witness as a
+result of his compelled disclosures."<a name="fnref45"></a><a href="#fn45">[45]</a></h3>
+
+<h3><a name="para25"></a>{25} In the absence of derivative use
+immunity, the Fifth Amendment protection against self-incrimination
+places an individual compelled to produce evidence in a better
+position than receiving immunity. <i>Kastigar</i> relied on the
+Court's prior decision on state-compelled testimony, holding that
+"immunity from use and derivative use 'leaves the witness
+and the Federal Government in substantially the same position
+as if the witness had claimed his privilege' in the absence of
+a grant of immunity."<a name="fnref46"></a><a href="#fn46">[46]</a>
+If the information would not have been discovered without the
+grant of immunity, the witness is placed in a worse position because
+of the grant of immunity.<a name="fnref47"></a><a href="#fn47">[47]</a></h3>
+
+<h3><a name="para26"></a>{26} In its cases involving the production
+of documents, the Court seems to have confused the issue of whether
+the documents are necessarily privileged with the question of
+whether they are the product of compelled testimonial conduct.
+The Court was arguably correct in its conclusion that they are
+not privileged because their writing was not compelled. Thus,
+one can conclude that if the documents had been seized as a result
+of a legitimate search, they would be admissible. However, the
+Court ignored the question of whether they were the product of
+compelled information. If the prosecution immunizes a defendant
+and asks her where the murder weapon is, and the prosecution uses
+that information to obtain the weapon, it will be barred from
+using the weapon to trace the defendant to the crime unless it
+can show an independent path. Indeed, the Court has recently re-affirmed
+its statement in <i>Curcio v. United States</i><a name="fnref48"></a><a href="#fn48">[48]</a> that the custodian of documents cannot be
+compelled to answer questions about the documents' location without
+a grant of use immunity.<a name="fnref49"></a><a href="#fn49">[49]</a>
+Under the Court's precedents, such a grant implies that documents
+discovered or produced as a result of the answers to such questions
+would be suppressed as the product of the compelled testimony.<a name="fnref50"></a><a href="#fn50">[50]</a> A subpoena to produce
+the documents implicitly requires the same information as would
+result from the answering of questions about the documents' location,
+so a distinction in the scope of derivative immunity in the two
+cases seems unjustified. Indeed, the Court's earlier cases expressly
+equate documents discovered by compulsory production and documents
+discovered by compulsory testimony, which then leads to the documents:</h3>
+
+<blockquote>
+  <h3>In practice the result is the same to one accused of a crime,
+  whether he be obliged to supply evidence against himself or whether
+  such evidence be obtained by an illegal search of his premises
+  and seizure of his private papers. In either case he is the unwilling
+  source of the evidence, and the Fifth Amendment forbids that
+  he shall be compelled to be a witness against himself in a criminal
+  case.<a name="fnref51"></a><a href="#fn51">[51]</a></h3>
+</blockquote>
+
+<h3><a name="para27"></a>{27} In <i>Fisher</i> and progeny, the
+defendant failed sufficiently to exclude the possibility of independent
+discovery. So far as holdings go, as opposed to statements, there
+is nothing in the Supreme Court's decisions from <i>Fisher</i>
+to the present that excludes the possibility of its rejecting
+its ill-conceived and inconsistent assumptions on derivative use
+immunity in the case of documents. Even the statements are rare,
+being confined to a dissenter's assertion in <i>Braswell</i>.<a name="fnref52"></a><a href="#fn52">[52]</a></h3>
+
+<h3><a name="para28"></a>{28} Thus, it is still open for the Court
+to conclude that its conventional doctrines of use immunity apply
+to documentary production. In the context of cryptographic keys,
+that would ensure that the compulsory production of the key provided
+derivative use immunity for the contents of the documents decrypted
+with the key.</h3>
+
+<h3><a name="IIC2"></a></h3>
+
+<h3><a name="h2c2"></a><a href="#t2c2">2. Immunity As a Result
+of the Special Properties of Cryptographic Keys</a></h3>
+
+<h3><a name="para29"></a>{29} Even if the Court concludes that
+derivative use immunity does not generally apply to documents
+discovered with the aid of compelled testimony, there are special
+reasons for extending Fifth Amendment immunity to documents decrypted
+with the aid of the compelled production of a cryptographic key.</h3>
+
+<h3><a name="IIC2a"></a></h3>
+
+<h3><a name="h2c2a"></a><a href="#t2c2a">a. Creation of Communicative
+Content Through Decryption</a></h3>
+
+<h3><a name="para30"></a>{30} One unique property of a cryptographic
+key is that it creates communicative content. Producing an ordinary
+document or making available a key to a safe does not alter the
+communicative content of the documents produced or made available.
+In contrast, producing a cryptographic key gives the document
+a testimonial content by decrypting the document and returning
+it into plaintext. Thus, the compulsory production of the key
+is the compulsory creation of testimonial content. Without the
+key, the documents would not be useful as testimony.<a name="fnref53"></a><a href="#fn53">[53]</a></h3>
+
+<h3><a name="para31"></a>{31} Several Supreme Court opinions suggest
+that the creation of documentary evidence in this fashion triggers
+Fifth Amendment protection. The Court has held that the protection
+of the Fifth Amendment extends to any incriminating communication
+that might "itself, explicitly or implicitly, relate a factual
+assertion or disclose information."<a name="fnref54"></a><a href="#fn54">[54]</a> The production of a cryptographic key indirectly
+relates the material contained in the document decrypted with
+the cryptographic key and should therefore lead to immunity under
+the Fifth Amendment for the document produced with the key.</h3>
+
+<h3><a name="para32"></a>{32} Elsewhere, the Court has stated that
+it "do[es] not view the exhibition of physical characteristics
+to be equivalent to the creation of documentary evidence."<a name="fnref55"></a><a href="#fn55">[55]</a> The Court's concern
+with "the creation of documentary evidence" also suggests
+that the compulsory production of the cryptographic key, which
+makes possible the creation of the documentary evidence to be
+used in court, provides immunity as to the documents that could
+be created only with the key.</h3>
+
+<h3><a name="para33"></a>{33}Finally, <i>Fisher</i> and <i>Doe
+I </i>stated that the production sought in those cases "does
+not . . . ordinarily compel the taxpayer to restate, repeat, or
+affirm the truth of the contents of the documents sought."<a name="fnref56"></a><a href="#fn56">[56]</a> Thus, although a person
+may be compelled to produce a document, compulsory production
+cannot require her to repeat, affirm, or explain the contents
+of the document. However, the compulsory production of the key
+does force the repetition of the document in a new and courtroom-usable
+form. Under these precedents, then, the compulsory production
+of a key should give rise to immunity from culpability derived
+from the document produced with the key.</h3>
+
+<h3><a name="para34"></a>{34} Even if it were argued that it is
+the document and the key that jointly create the testimonial content,
+that is sufficient, because self-incrimination protection extends
+to all the "links [that] frequently compose that chain of
+testimony which is necessary to convict any individual of a crime."<a name="fnref57"></a><a href="#fn57">[57]</a> Thus, an ordinarily
+non-privileged item, such as the identity of the client or fee
+information, is privileged if the disclosure of the item would
+reveal the substance of an attorney-client communication.<a name="fnref58"></a><a href="#fn58">[58]</a> Because the key is a necessary link in the
+chain, it gives rise to immunity from documents with it.</h3>
+
+<h3><a name="IIC2b"></a></h3>
+
+<h3><a name="h2c2b"></a><a href="#t2c2b">b. Authentication Through
+Decryption</a></h3>
+
+<h3><a name="para35"></a>{35} A second unique property of a cryptographic
+key is that it can operate as a digital signature, necessarily
+authenticating a document.<a name="fnref59"></a><a href="#fn59">[59]</a>
+Indeed, if the person providing the information has never shared
+that information with anyone else, a cryptographic key provides
+a more effective way of authenticating than locks, because it
+is easier to pick locks than to decrypt without a key.<a name="fnref60"></a><a href="#fn60">[60]</a></h3>
+
+<h3><a name="para36"></a>{36} The Fifth Amendment precludes the
+compulsory authentication of documents. "[T]he Fifth Amendment
+may protect an individual from complying with a subpoena for the
+production of his personal records in his possession because the
+very act of production may constitute a compulsory authentication
+of incriminating information."<a name="fnref61"></a><a href="#fn61">[61]</a>
+"'[T]he constitutional privilege against self incrimination
+. . . is designed to prevent the use of legal process to force
+from the lips of the accused individual the evidence necessary
+to convict him or to force him to produce and authenticate any
+personal documents or effects that might incriminate him.'"<a name="fnref62"></a><a href="#fn62">[62]</a></h3>
+
+<h3><a name="para37"></a>{37} The Court noted that where the compulsory
+production of documents may authenticate them, "reliev[ing]
+the government of the need for authentication," the Fifth
+Amendment precludes their production.<a name="fnref63"></a><a href="#fn63">[63]</a> Although <i>Fisher</i> suggested that no
+grant of immunity is necessary where the "possession [of
+the documents, their] existence, and authentication were a 'foregone
+conclusion,'"<a name="fnref64"></a><a href="#fn64">[64]</a>
+these issues will seldom be indisputable with respect to cryptographic
+keys. One difference between "a pre-existing document and
+a pre-existing object" is that a prosecutor "can usually
+authenticate [a document, such as a diary,] as the defendant's
+either by content or handwriting analysis."<a name="fnref65"></a><a href="#fn65">[65]</a> Authentication in this way will be impossible
+without the key. The impossibility of such authentication suggests
+that the factual premise of <i>Fisher</i> cannot apply in the
+case of computer-encrypted documents, so that compulsory production
+of a cryptographic key requires granting use immunity for the
+documents decrypted with the key.</h3>
+
+<h3><a name="IIC3"></a></h3>
+
+<h3><a name="h2c3"></a><a href="#t2c3">3. Conclusion</a></h3>
+
+<h3><a name="para38"></a>{38} Close analysis of cases interpreting
+the Fifth Amendment suggests that the amendment does provide protection
+against the compulsory production of cryptographic keys. This
+protection can result from a reconciliation of the Court's inconsistency
+between the compulsory production of documentary evidence and
+its more general treatment of the doctrine of derivative use immunity.
+Even in the absence of such a reconciliation, the Court's precedents
+suggest that it can be expected to hold that the documents produced
+from a cryptographic key cannot be used against the producer of
+the key, because a cryptographic key authenticates and confers
+testimonial content on documents that are otherwise unauthenticated
+and meaningless.</h3>
+
+<h3><a name="para39"></a>{39} This result is quite narrow: only
+those who claim to be criminally incriminated by the key or the
+decrypted document can claim the protection of the Fifth Amendment.
+Although I have suggested a way in which overbroad criminal statutes
+can be turned to the advantage of innocent citizens,<a name="fnref66"></a><a href="#fn66">[66]</a> this result seems unsatisfactory. Why should
+criminals have a right to privacy in their documents when non-criminals
+do not? The obvious answer is that the Fifth Amendment protects
+against self-incrimination, not against invasions of privacy.
+However, early American cases provided much broader protection
+for privacy. The next section justifies a revival of these early
+authorities.</h3>
+
+<h3></h3><center><a name="III"></a></center><h3></h3>
+
+<h2 align=center><a name="h3"></a><a href="#t3">III. The Advantages
+of a Traditional Solution</a></h2>
+
+<h3><a name="para40"></a>{40} Although early cases provided immunity
+from search and seizure and the compulsory production of most
+private documents, it is unclear whether any of this early protection
+for private documents survives. Justice O'Connor's concurrence
+in the Doe II opinion expressed her belief that the Court's opinion
+eliminated the possibility of protection for documents. It has
+been suggested that her opinion for the court in <i>Baltimore
+City Department of Social Services v. Bouknight</i><a name="fnref67"></a><a href="#fn67">[67]</a> establishes her <i>Doe II </i>concurrence
+as the holding of the Court.<a name="fnref68"></a><a href="#fn68">[68]</a></h3>
+
+<h3><a name="para41"></a>{41} On the other hand, <i>Bouknight </i>involved
+an attempt to conceal a child, which is quite a different case
+from documents.<a name="fnref69"></a><a href="#fn69">[69]</a>
+The absence of protection for corporate documents results from
+the state's power of visitation over corporations, which meant
+that their records were not private.<a name="fnref70"></a><a href="#fn70">[70]</a> The same argument would apply with even
+greater force with a child, which could not be said to be the
+private property or records of a parent. Moreover, even after
+the Court's decision in <i>Baltimore v. Bouknight</i>, the Court
+continues to say that the privilege reflects "our respect
+for the inviolability of the human personality and of the right
+of each individual 'to a private enclave where he may live a private
+life.'"<a name="fnref71"></a><a href="#fn71">[71]</a> This
+idea of a private life is difficult to reconcile with a privilege
+that applies solely to self-incriminating and testimonial conduct
+before a judicial tribunal.</h3>
+
+<h3><a name="para42"></a>{42} This part of the paper suggests the
+outlines of an alternative approach to the problem of confidential
+documents and justifies that approach in terms of the Constitution
+and its traditional interpretation. Even if the United States
+Supreme Court refuses to entertain such an approach, state courts
+may be persuaded that such an approach is both more consistent
+with the intent of the adopters of the Constitution and contemporary
+considerations of policy.</h3>
+
+<h3><a name="IIIA"></a></h3>
+
+<h3><a name="h3a"></a><a href="#t3a">A. Search and Seizure under
+"Boyd v. United States"</a></h3>
+
+<h3><a name="para43"></a>{43} In <i>Boyd v. United States</i>,<a name="fnref72"></a><a href="#fn72">[72]</a> the Supreme Court
+held that "a search and seizure [was] equivalent [to] a compulsory
+production of a man's private papers" and that the search
+was "an 'unreasonable search and seizure' within the meaning
+of the Fourth Amendment."<a name="fnref73"></a><a href="#fn73">[73]</a>
+Under <i>Boyd</i>, the government could not search for private
+documents and could not compel their production.</h3>
+
+<h3><a name="para44"></a>{44} The <i>Boyd</i> decision was based
+on a careful review of the intent at the time of the framing and
+the practices of the colonial governments to which the framers
+objected.<a name="fnref74"></a><a href="#fn74">[74]</a> Historically,
+searches could only be based on the superior property rights of
+the government or some other person in the things for which the
+search was made.<a name="fnref75"></a><a href="#fn75">[75]</a>
+Thus, one could search for and seize "stolen or forfeited
+goods"<a name="fnref76"></a><a href="#fn76">[76]</a> and
+contraband, such as "counterfeit coin, lottery, tickets,
+implements of gambling, &amp; c."<a name="fnref77"></a><a href="#fn77">[77]</a> "Forfeited goods" included the
+instrumentalities of the crime, which were forfeited because of
+their use in the crime<a name="fnref78"></a><a href="#fn78">[78]</a>
+and included papers that were fruits, contraband, or instrumentalities.<a name="fnref79"></a><a href="#fn79">[79]</a> Because mere evidence
+could not be searched for at the time of the framing, and the
+framers intended to adopt these common-law restrictions,<a name="fnref80"></a><a href="#fn80">[80]</a> these standards defined what the framers
+would have understood as a "reasonable" search under
+the Fourth Amendment.<a name="fnref81"></a><a href="#fn81">[81]</a></h3>
+
+<h3><a name="para45"></a>{45} <i>Boyd</i> likewise cited the work
+of the first congress and contemporary rules of equity in interpreting
+the scope of the Fifth Amendment's right against self-incrimination.<a name="fnref82"></a><a href="#fn82">[82]</a> The <i>Boyd</i> opinion
+noted that even the "obnoxious writs of assistance"
+did not allow searches for private papers.<a name="fnref83"></a><a href="#fn83">[83]</a> As the <i>Boyd</i> Court further observed,
+the same history showed an absence of power to use process to
+seize private papers,<a name="fnref84"></a><a href="#fn84">[84]</a>
+and the first Congress expressly adopted chancery practice, which
+forbade the compulsory production of documents.<a name="fnref85"></a><a href="#fn85">[85]</a> Congress did not enact a statute that could
+possibly be construed to allow the seizure of private papers,
+whether for use in evidence or in forfeiture, until 1863.<a name="fnref86"></a><a href="#fn86">[86]</a> The <i>Boyd</i> Court concluded from this
+review of practices of the framing that the compulsory production
+of private papers or a search for them violated the Fifth Amendment
+as well as the Fourth Amendment.<a name="fnref87"></a><a href="#fn87">[87]</a></h3>
+
+<h3><a name="para46"></a>{46} <i>Boyd</i>'s antiquity suggests
+that it is consistent with the framers' intent. Indeed, both <i>Boyd</i>
+and the subsequent <i>Gouled</i> decision expressly placed their
+analysis of the Fourth and Fifth Amendments on a historical basis.<a name="fnref88"></a><a href="#fn88">[88]</a> Subsequent decisions,
+although criticizing these cases, have not attacked their historical
+basis.<a name="fnref89"></a><a href="#fn89">[89]</a></h3>
+
+<h3><a name="para47"></a>{47} One possible difficulty with <i>Boyd</i>'s
+argument is that the search and review of papers are themselves
+the invasion of privacy. That papers that are mere evidence are
+not then carried away does not eliminate the harm from the search.
+As Learned Hand wrote, "If the search is permitted at all,
+perhaps it does not make so much difference what is taken away,
+since the officers will ordinarily not be interested in what does
+not incriminate, and there can be no sound policy in protecting
+what does."<a name="fnref90"></a><a href="#fn90">[90]</a>
+However, as Hand continued, "Nevertheless, limitations upon
+the fruit to be gathered tend to limit the quest itself."<a name="fnref91"></a><a href="#fn91">[91]</a> In addition, the need
+for probable cause for a search, coupled with restrictions on
+what the government may seize, could limit the occurrences of
+searches of private papers.</h3>
+
+<h3><a name="para48"></a>{48} Although <i>Boyd</i>'s property-oriented
+approach to the Fourth and Fifth Amendments provides more support
+for privacy than the contemporary privacy-based approach of <i>Katz</i>,<a name="fnref92"></a><a href="#fn92">[92]</a> it would be wrong
+to conclude that the <i>Boyd</i> rule would allow unrestricted
+criminality. Under the<i> Boyd</i> line of cases, there could
+be no Fifth Amendment rights for corporate papers because of the
+state's visitatorial powers.<a name="fnref93"></a><a href="#fn93">[93]</a>
+Under the post-<i>Boyd</i> extension of corporate treatment to
+non-corporate collective entities, organizations such as partnerships,
+unions, and bankrupt businesses would have no Fifth Amendment
+protection.<a name="fnref94"></a><a href="#fn94">[94]</a> If this
+doctrine covers associations in fact,<a name="fnref95"></a><a href="#fn95">[95]</a> the scope of communications entitled to
+Fifth Amendment protection would present few obstacles to law
+enforcement.</h3>
+
+<h3><a name="para49"></a>{49} Similarly, <i>Boyd's</i> principles
+allowed the Fourth Amendment seizure of papers sent to another
+in pursuit of criminality as the instrumentalities of criminal
+acts.<a name="fnref96"></a><a href="#fn96">[96]</a> As Justice
+Marshall observed in dissent, "I see no bar in the Fourth
+or Fifth Amendment to the seizure of a letter from one conspirator
+to another directing the recipient to take steps that further
+the conspiracy.<a name="fnref97"></a><a href="#fn97">[97]</a></h3>
+
+<h3><a name="para50"></a>{50} <i>Boyd's</i> definition of Fourth
+and Fifth Amendment rights would also allow the granting of use
+immunity to the recipient of a communication to compel the contents
+of that communication to be used against the sender, or vice versa.
+An individual may not invoke the Fifth Amendment to protect against
+incrimination by a third party.<a name="fnref98"></a><a href="#fn98">[98]</a>
+Thus, under the Fifth Amendment, encrypted material that one sends
+to another can be discovered by the government by giving the recipient
+use immunity for the production of the key, because the Constitution
+"does not proscribe incriminating statements elicited from
+another."<a name="fnref99"></a><a href="#fn99">[99]</a></h3>
+
+<h3><a name="IIIB"></a></h3>
+
+<h3><a name="h3b"></a><a href="#t3b">B. Implications of the Rejection
+of "Boyd"</a></h3>
+
+<h3><a name="IIIB1"></a></h3>
+
+<h3><a name="h3b1"></a><a href="#t3b1">1. Rejection of Precedents</a></h3>
+
+<h3><a name="para51"></a>{51} If the Court continues to reject
+<i>Boyd</i>, it will have to reject more than the <i>Boyd</i>
+case. The doctrine that there was substantive protection of documents
+under the Fourth Amendment and Fifth Amendment, and that an invalid
+search or seizure under the Fourth Amendment precluded the use
+of the documents was shared in many opinions, some unanimous and
+some by the Court's most eminent members. In <i>United States
+v. Saline Bank</i>, Chief Justice Marshall, speaking for the Court,
+rejected a request for the production of bank documents.<a name="fnref100"></a><a href="#fn100">[100]</a> "The rule clearly is, that a party
+is not bound to make any discovery which would expose him to penalties,
+and this case falls within it."<a name="fnref101"></a><a href="#fn101">[101]</a> <i>Hale v. Henkel </i>affirmed <i>Boyd</i>'s
+holding that "an order for the production of books and papers
+may constitute an unreasonable search and seizure within the Fourth
+Amendment."<a name="fnref102"></a><a href="#fn102">[102]</a>
+In <i>Gouled v. United States</i>,<a name="fnref103"></a><a href="#fn103">[103]</a>
+Justice Clarke, speaking for a unanimous court, held when a government
+agent seized documents in violation of the Fourth Amendment, their
+introduction into court violated the Fifth Amendent.<a name="fnref104"></a><a href="#fn104">[104]</a> The Court's <i>Silverthorne Lumber </i>opinion
+by Justice Holmes and Justice Brandeis' famous <i>Olmstead</i>
+dissent are in accord.<a name="fnref105"></a><a href="#fn105">[105]</a>
+Many other cases concur.<a name="fnref106"></a><a href="#fn106">[106]</a></h3>
+
+<h3><a name="para52"></a>{52} <i>Boyd</i>'s statement has been
+approved as recently as 1973, when <i>United States v. Dionisio</i><a name="fnref107"></a><i><a href="#fn107">[107]</a></i> stated that
+the grand jury "cannot require the production by a person
+of private books and records that would incriminate him."<a name="fnref108"></a><a href="#fn108">[108]</a> In 1976, even after
+the <i>Fisher</i> decision, the Court wrote in <i>Andresen v.
+Maryland</i>, "'[T]he constitutional privilege against self
+incrimination . . . is designed to prevent the use of legal process
+to force from the lips of the accused individual the evidence
+necessary to convict him or to force him to produce and authenticate
+any personal documents or effects that might incriminate him.'"<a name="fnref109"></a><a href="#fn109">[109]</a> <i>Andresen</i>,
+by stating that the government's ability to use information depends
+on whether it had been produced by subpoena or search, suggests
+that the government was unable to use subpoenaed documents against
+their producer.<a name="fnref110"></a><a href="#fn110">[110]</a>
+This result would not have followed from a legitimate search under
+the Fourth Amendment.<a name="fnref111"></a><a href="#fn111">[111]</a></h3>
+
+<h3><a name="para53"></a>{53} The erosion of constitutional protection
+for private documents proceeded in three ways. First, <i>Warden
+v. Hayden</i> abolished the "mere evidence" rule.<a name="fnref112"></a><a href="#fn112">[112]</a> Although <i>Warden</i>,<a name="fnref113"></a><a href="#fn113">[113]</a> <i>Fisher</i>,<a name="fnref114"></a><a href="#fn114">[114]</a> and other cases
+have held out the possibility of protection for diaries, the general
+rule is that merely evidentiary documents can now be seized without
+restriction.<a name="fnref115"></a><a href="#fn115">[115]</a></h3>
+
+<h3><a name="para54"></a>{54} Second, cases have narrowed the scope
+of evidence that was considered compelled, so that the compelled
+production of documents was not considered the compulsion of the
+incriminating evidence in the documents themselves. In <i>Johnson
+v. United States</i>, Justice Holmes wrote for the Court, "A
+party is privileged from producing the evidence, but not from
+its production."<a name="fnref116"></a><a href="#fn116">[116]</a>
+That phrase led to the idea, in subsequent cases, that compelled
+production of incriminating information could make the information
+usable against the person producing it, if that person were screened
+from the testimonial aspects of production.<a name="fnref117"></a><a href="#fn117">[117]</a> This interpretation is inapplicable to
+the facts of<i> Johnson</i>, which did not involve an attempt
+to make a party produce evidence by granting that party limited
+immunity.<a name="fnref118"></a><a href="#fn118">[118]</a></h3>
+
+<h3><a name="para55"></a>{55} Third, the Court further limited
+the Fifth Amendment's protection to extend only to testimonial
+evidence. The origin of this line of authority was cases such
+as Holmes' opinion in <i>Holt v. United States,</i> which held
+that an accused could be compelled to wear a blouse like that
+worn by the perpetrator.<a name="fnref119"></a><a href="#fn119">[119]</a>
+<i>Holt</i>, however, did not distinguish between the act of producing
+information and the testimonial contents of what was compulsorily
+produced. Rather, it held that the Fifth Amendment's prohibition
+only extended to "physical or moral compulsion to extort
+<i>communications</i> from him, not an exclusion of his body as
+evidence when it may be material."<a name="fnref120"></a><a href="#fn120">[120]</a> Wearing the blouse was a physical act
+and not a commnuication. However, the threat of contempt certainly
+coerces documentary evidence, which is a communication. Thus,
+<i>Holt</i> is entirely consistent with Holmes' opinion for the
+Court in <i>Silverthorne Lumber</i>, which barred a subpoena for
+documents.<a name="fnref121"></a><a href="#fn121">[121]</a> <i>Holt
+</i>is also entirely consistent with opinions that Holmes joined
+such as <i>Hale, </i>affirming <i>Boyd</i>'s holding that "an
+order for the production of books and papers may constitute an
+unreasonable search and seizure within the Fourth Amendment,"<a name="fnref122"></a><a href="#fn122">[122]</a> and <i>Gouled,</i>
+holding that when a government agent seized documents in violation
+of the Fourth Amendment, their introduction into court violated
+the Fifth Amendment.<a name="fnref123"></a><a href="#fn123">[123]</a></h3>
+
+<h3><a name="para56"></a>{56} However, in <i>Fisher v. United States</i>,
+the Court stated that the compulsory production of business documents
+did not compel testimonial self-incrimination, so it was not prohibited
+by the Fifth Amendment.<a name="fnref124"></a><a href="#fn124">[124]</a>
+The Court reasoned that the author of the statements written in
+the documents was not compelled to be a witness against himself,
+because the author had voluntarily written the statements. The
+Court did hold that any inferences drawn from the act of production
+itself could be barred.<a name="fnref125"></a><a href="#fn125">[125]</a>
+"The elements of compulsion are clearly present, but the
+more difficult issues are whether the tacit averments of the taxpayer
+are both 'testimonial' and 'incriminating' for purposes of applying
+the Fifth Amendment. These questions perhaps do not lend themselves
+to categorical answers; their resolution may instead depend on
+the facts and circumstances of particular cases or classes thereof."<a name="fnref126"></a><a href="#fn126">[126]</a> In that case, the
+Court concluded that because the papers had been prepared by the
+accountant and were in the hands of the accountant, their production
+did not "involve testimonial self-incrimination."<a name="fnref127"></a><a href="#fn127">[127]</a></h3>
+
+<h3><a name="IIIB2"></a></h3>
+
+<h3><a name="h3b2"></a><a href="#t3b2">2. Inconsistencies with
+Other Authority on Privilege</a></h3>
+
+<h3><a name="para57"></a>{57} The expansion of other privileges
+protecting against intrusion into personal thoughts, including
+work-product immunity, attorney-client and spousal privileges,
+and self-evaluative privileges, shows that there is no compelling
+policy reason for rejecting <i>Boyd.</i></h3>
+
+<h3><a name="para58"></a>{58) Work-product immunity had its origin
+as a special case of mental privacy, not as a special privilege
+for attorneys. As the Court wrote in <i>Hickman v. Taylor</i>,
+which invented work-product protection, "[e]xamination into
+a person's files and records, <i>including</i> those resulting
+from the professional activities of an attorney, must be judged
+with care. It is not without reason that various <i>safeguards
+have been established to preclude unwarranted excursions into
+the privacy of a man's work</i>."<a name="fnref128"></a><a href="#fn128">[128]</a> If the doctrine of mental privacy is to
+be rejected, then the foundation of <i>Hickman</i> and work-product
+protection is undermined.</h3>
+
+<h3><a name="para59"></a>{59} Commonly accepted testimonial privileges
+create at least as much social harm as and have fewer benefits
+than <i>Boyd's</i> protection for private documents.<a name="fnref129"></a><a href="#fn129">[129]</a> If I write down my daily activities in
+a letter to an attorney or spouse, keeping a copy for myself,
+the material is privileged in the hands of the author, the attorney,
+and the spouse.<a name="fnref130"></a><a href="#fn130">[130]</a>
+Both the marital privilege and the <i>Boyd</i> privilege for private
+documents create a zone of autonomy. "From the perspective
+of the individual in Western industrial societies, the marital
+relationship is likely to be seen as an extension of one's personal
+autonomy . . . . It is in this sense that courts often glimpse
+the relationship between the privilege against self-incrimination
+and the marital witness privilege."<a name="fnref131"></a><a href="#fn131">[131]</a></h3>
+
+<h3><a name="para60"></a>{60} A diary privilege is even more justified
+than an attorney-client privilege. Because of the need for legal
+advice, the attorney-client relationship is less likely to be
+deterred by a loss of privilege than diary keeping. Moreover,
+the attorney-client privilege can be used to evade the law<a name="fnref132"></a><a href="#fn132">[132]</a> or to convey information
+through a corporation without creating a discoverable paper trail,<a name="fnref133"></a><a href="#fn133">[133]</a> which weakens the
+claim for the privilege.</h3>
+
+<h3><a name="para61"></a>{61} Courts and legislatures have also
+been creating new privileges. The courts have judicially expanded
+government privileges, even though the legislature can protect
+the government. "[G]overnment privileges continue to metastasize."<a name="fnref134"></a><a href="#fn134">[134]</a> Many jurisdictions
+have also protected corporate efforts at self-evaluation under
+the rubric of "self-evaluative privileges." These include
+general self-evaluative privileges for hospital peer review committees<a name="fnref135"></a><a href="#fn135">[135]</a> and environmental
+audits,<a name="fnref136"></a><a href="#fn136">[136]</a> and other
+authorities have suggested expanding the privilege in other areas.<a name="fnref137"></a><a href="#fn137">[137]</a></h3>
+
+<h3><a name="para62"></a>{62} Thus, contemporary law generally
+provides a high degree of privilege for attorneys and those who
+consult with them, a fair degree of privilege for governments
+and corporations evaluating themselves, and no privilege at all
+for those who merely want to write down their ideas. Because the
+equivalent of the <i>Boyd</i> privilege is available to those
+who have spouses or attorneys and the sophistication to use them
+in this way, only the shy, the naive, or the single and impoverished
+need give up their right of privacy.</h3>
+
+<h3><a name="IIIB3"></a></h3>
+
+<h3><a name="h3b3"></a><a href="#t3b3">3. Privacy and Property
+Rights</a></h3>
+
+<h3><a name="para63"></a>{63} In addition to <i>Boyd</i>'s consistency
+with the framers' intent and with other privileges created by
+a privacy-based approach, its protection of property interests
+may protect privacy more effectively than tests directly based
+on privacy.</h3>
+
+<h3><a name="para64"></a>{64} <i>Warden v. Hayden</i>,<a name="fnref138"></a><a href="#fn138">[138]</a> in which the Supreme Court discerned a
+"shift in emphasis from property to privacy"<a name="fnref139"></a><a href="#fn139">[139]</a> in Fourth Amendment rights, significantly
+eroded protection against governmental searches and seizures.
+In <i>Warden v. Hayden</i>, the Court upheld the seizure of mere
+evidence, although such a seizure would not have been allowed
+under property-based interpretations of the Fourth Amendment.
+In <i>Katz v. United States</i>,<a name="fnref140"></a><a href="#fn140">[140]</a>
+the Supreme Court followed the <i>Warden v. Hayden</i> decision
+and so resolved the "search" of a telephone conversation
+by saying that the search invaded privacy, rather than reaching
+the same result through property law concepts.<a name="fnref141"></a><a href="#fn141">[141]</a></h3>
+
+<h3><a name="para65"></a>{65} This reconstruction of Fourth Amendment
+law to limit the influence of property law concepts was unnecessary.
+Justices concurring in the result in <i>Warden v. Hayden</i> said
+so in their opinions.<a name="fnref142"></a><a href="#fn142">[142]</a>
+Moreover, <i>Warden v. Hayden </i>based the shift to privacy on
+the argument that common law concepts of property could not explain
+prior decisions like <i>Silverthorne Lumber</i>, which had returned
+copies of documents illegally seized.<a name="fnref143"></a><a href="#fn143">[143]</a> However, even before <i>Warden</i>, the
+Supreme Court protected against the unauthorized copying of material,
+similar to that involved in the <i>Silverthorne Lumber</i>.<a name="fnref144"></a><a href="#fn144">[144]</a> Since <i>Warden</i>,
+the expansion of protection of non-physical property has continued.<a name="fnref145"></a><a href="#fn145">[145]</a> In <i>Katz</i>,
+the Court protected against electronic eavesdropping; it could
+have held that a user's payment for a phone call gives him a property
+interest in the call.<a name="fnref146"></a><a href="#fn146">[146]</a></h3>
+
+<h3><a name="para66"></a>{66} In addition to being unnecessary,
+the shift in emphasis in Fourth Amendment analysis from property
+law to privacy undermined the privacy interests that Justice Brennan,
+the author of <i>Warden v. Hayden</i>, seemed to wish to promote.
+The undermining arose from the difficulty in defining limits on
+privacy. No one wanted to protect <i>every</i> expectation of
+privacy-as the Court pointed out, this would provide constitutional
+protection for the burglar justifiably thinking that his presence
+in a house would go undiscovered.<a name="fnref147"></a><a href="#fn147">[147]</a></h3>
+
+<h3><a name="para67"></a>{67} To delimit the Fourth Amendment's
+protection of privacy, the Court in <i>Rakas v. Illinois</i> began
+to confine rights of privacy to those whose expectations of privacy
+society considered "reasonable." Under <i>Rakas </i>and
+more recent cases following it, "[a] subjective expectation
+of privacy is legitimate if it is 'one that society is prepared
+to recognize as "reasonable.'"<a name="fnref148"></a><a href="#fn148">[148]</a></h3>
+
+<h3><a name="para68"></a>{68} However, this made the privacy test
+circular. How are we to determine that the expectation is "one
+that society is prepared to recognize as 'reasonable'"?<a name="fnref149"></a><a href="#fn149">[149]</a> As the <i>Rakas</i>
+Court recognized, "[I]t would, of course, be tautological
+to fall back on the notion that those expectations of privacy
+which are legitimate depend primarily on cases deciding exclusionary-rule
+issues in criminal cases."<a name="fnref150"></a><a href="#fn150">[150]</a>
+To avoid this problem, the Court concluded, "Legitimation
+of expectations of privacy by law must have a source outside of
+the Fourth Amendment, either by reference to concepts of real
+or personal property law or to understandings that are recognized
+and permitted by society."<a name="fnref151"></a><a href="#fn151">[151]</a></h3>
+
+<h3><a name="para69"></a>{69} Despite this recognition in the <i>Rakas</i>
+opinion of the need to avoid tautology, the Court has generally
+ignored or rejected non-criminal-law sources of an expectation
+of privacy. The language from the opinion has been used only in
+<i>United States v. Jacobsen</i>, and even in that case, the Court
+upheld the search.<a name="fnref152"></a><a href="#fn152">[152]</a>
+In <i>Jacobsen</i>, the Court wrote that "the governmental
+conduct could reveal nothing about noncontraband items,"
+so that the search was justified.<a name="fnref153"></a><a href="#fn153">[153]</a>
+By basing the permissibility of the search on its criminal law
+consequences, the Court made it more likely that privacy rights
+would arise only in criminal cases. The Court's restriction of
+civil claims based on improper searches also reduces the likelihood
+that a privacy claim would be heard in a non-criminal context.<a name="fnref154"></a><a href="#fn154">[154]</a></h3>
+
+<h3><a name="para70"></a>{70} More recently, the Court has rejected
+the idea that "concepts of privacy under the laws of each
+State are to determine the reach of the Fourth Amendment."<a name="fnref155"></a><a href="#fn155">[155]</a> Thus, even state
+law recognition of a right to privacy will not make those expectations
+of privacy reasonable for purposes of the Fourth Amendment.<a name="fnref156"></a><a href="#fn156">[156]</a> The Supreme Court
+and state courts frequently differ on what constitutes a reasonable
+expectation of privacy.<a name="fnref157"></a><a href="#fn157">[157]</a></h3>
+
+<h3><a name="para71"></a>{71} By defining rights of privacy almost
+exclusively with reference to criminal cases, the Supreme Court
+has insured that privacy will almost always be pitted against
+the interest in convicting a criminal. Tying criminal rights to
+property rights created a general interest in protecting criminals
+because of the general interest in protecting property rights.
+Tying criminal rights to property rights also allowed for the
+expansion of rights against the government as new forms of property
+arose. Tying criminal rights to a circular test based on "reasonable
+expectations" that would only be applied in criminal cases
+served neither of these purposes. Instead, this circularity allowed
+the Fourth Amendment to be adjusted to the advantage of those
+in the legal system best able to protect themselves. The very
+uncertainty of the meaning of the word "privacy" promoted
+this process.<a name="fnref158"></a><a href="#fn158">[158]</a>
+As a result, in several instances a common law expectation of
+privacy exists because a business interest is involved, but the
+corresponding interest in privacy under the Fourth Amendment is
+held to be unreasonable.<a name="fnref159"></a><a href="#fn159">[159]</a></h3>
+
+<h3></h3><center><a name="IV"></a></center><h3></h3>
+
+<h2 align=center><a name="h4"></a><a href="#t4">IV. Conclusion</a></h2>
+
+<h3><a name="para72"></a>{72} Cryptography may provide a technical
+fix for Supreme Court decisions allowing the invasion of one's
+private papers. However, the effectiveness of that fix will depend
+on whether the Court holds that use immunity from the compulsory
+production of a cryptographic key extends to the incriminating
+documents decrypted with the key. Logic suggests that the Court
+should so hold.</h3>
+
+<h3><a name="para73"></a>{73} However, the Court's inconsistencies
+in this area suggest the limits of logic. The Court has consistently
+reconstructed Fourth and Fifth Amendment precedents to move away
+from historical practice. This reconstruction is in part responsible
+for the Court's inconsistencies.</h3>
+
+<h3><a name="para74"></a>{74} A more sound approach would be to
+adhere to the usual practice of viewing the Fourth and Fifth Amendments
+as adopting the practices of the framers at the time of the framing.
+This would revive broad protection for merely evidentiary materials.
+Moreover, it would allow constitutional protections to evolve
+along with social needs, as reflected in society's changing definition
+of property.</h3>
+
+<h3></h3><center><hr size="3" width="300"></center><h3></h3>
+
+<h2 align=center>Footnotes</h2>
+
+<h3><a name="fn*"></a><a href="#fnref*">[*]</a>Greg S. Sergienko,
+1980. A.B. Harvard College magna cum laude; degree in Social Studies;
+<br>
+1980-1982. Programmer/analyst in computational geometry, computer
+graphics, and systems programming for Abt Computer Graphics Corp.
+and Geographic Systems Inc.; <br>
+1985. J.D. Harvard Law School magna cum laude; <br>
+1985-1986. Law Clerk for the Honorable Alfred T. Goodwin, United
+States Court of Appeals for the Ninth Circuit; <br>
+1986-1993. Associate, Cable Barrett Langenbach &amp; McInerney
+and Barrett Hale &amp; Gilman; <br>
+1993-1994. Bigelow Fellow and Lecturer in Law, University of Chicago
+Law School; <br>
+1994-1996. Visiting Assistant Professor, University of Richmond
+Law School; <br>
+Spring 1995. Adjunct Professor, William &amp; Mary Law School.</h3>
+
+<h3><a name="fn1"></a><a href="#fnref1">[1]</a> U.S. C<font size="-1">ONST</font>.
+amend. V. The Fifth Amendment's privilege against self incrimination
+was applied to the states through the Fourteenth Amendment in
+Malloy v. Hogan, 378 U.S. 1 (1964). This protection means that
+no government within the federal system can compel testimony that
+would incriminate the witness in proceedings brought before any
+other government's courts. Murphy v. Waterfront Comm'n, 378 U.S.
+52, 77-78 (1964).</h3>
+
+<h3><a name="fn2"></a><a href="#fnref2">[2]</a> Programs using
+encryption keys can now make information highly resistant to decrypting
+even if the algorithm for encrypting the information is known.
+A. Michael Froomkin, <i>The Metaphor is the Key: Cryptography,
+the Clipper Chip, and the Constitution</i>, 143 U. P<font size="-1">A</font>.
+L. R<font size="-1">EV</font>. <a href="http://www-swiss.ai.mit.edu/6095/articles/froomkin-metaphor/text.html">709</a>,
+<a href="http://www-swiss.ai.mit.edu/6095/articles/froomkin-metaphor/appendices.html#PAGE886">886</a>
+&amp; nn. <a href="http://www-swiss.ai.mit.edu/6095/articles/froomkin-metaphor/notes-appendices.html#ENDNOTE767">767</a>,
+<a href="http://www-swiss.ai.mit.edu/6095/articles/froomkin-metaphor/notes-appendices.html#ENDNOTE768">768</a>
+(1995). For purposes of this paper, the term "cryptographic
+key" will refer to that without which the government may
+not gain access to the underlying plaintext. In a public key cryptosystem,
+this would be the user's private key (and corresponding passphrase);
+in a private key cryptosystem, this would be the private key.
+It is conceivable that in other cryptosystems, the "key"
+could very well be a word or even a phrase.</h3>
+
+<h3><a name="fn3"></a><a href="#fnref3">[3]</a> 387 U.S. 294, 304
+(1967).</h3>
+
+<h3><a name="fn4"></a><a href="#fnref4">[4]</a> <i>Id</i>.at 303.</h3>
+
+<h3><a name="fn5"></a><a href="#fnref5">[5]</a> <i>Id</i>.; Fisher
+v. United States, 425 U.S. 391, 407 n.9 (1976).</h3>
+
+<h3><a name="fn6"></a><a href="#fnref6">[6]</a> <i>Compare</i>
+<i>In re</i> Grand Jury Subpoena Duces Tecum Dated Oct. 29, 1992,
+1 F.3d 87 (2d Cir. 1993), <i>cert. denied, </i>114 S. Ct. 920
+(1994) (holding that there is no protection for private papers)
+<i>with In re</i> Grand Jury Dubpoena Duces Tecum Dated Oct. 29,
+1992, 1 F.3d at 95-96 (concluding that such protection still exists)
+(Altimari, J., dissenting). Justice O'Connor has declared in a
+concurring opinion that "the Fifth Amendment provides absolutely
+no protection for the contents of private papers of any kind."
+United States v. Doe, 465 U.S. 605, 618 (1984) (Doe I) (O'Connor,
+J., concurring). Justices Brennan and Marshall expressly disagreed.
+<i>Id</i>. at 619 (Marshall, J., joined by Brennan, J., concurring
+in part and dissenting in part). Moreover, a post-<i>Doe</i> decision
+stated that the Fifth Amendment privilege reflects "our respect
+for the inviolability of the human personality and of the right
+of each individual 'to a . . . private life.'" Pennsylvania
+v. Muniz, 496 U.S. 582, 595 n.8 (1990) (quoting Doe v. United
+States, 487 U.S. 201, 212-13 (1988) (Doe II) (quoting Murphy v.
+Waterfront Comm'n, 378 U.S. 52, 55 (1964) (internal citations
+omitted))). This statement is difficult to reconcile with interpretations
+of the Fifth Amendment providing no protection for existing documents.</h3>
+
+<h3><a name="fn7"></a><a href="#fnref7">[7]</a> <i>Fisher, </i>425
+U.S. at 409-10.</h3>
+
+<h3><a name="fn8"></a><a href="#fnref8">[8]</a> <i>Id.</i> at 401
+n.7.</h3>
+
+<h3><a name="fn9"></a><a href="#fnref9">[9]</a> The original message
+is called the "plaintext." A key is used by a cipher
+to transmute the plaintext into a ciphertext. Froomkin, <i>supra</i>
+<a href="#fn2">note 2</a>, at <a href="http://www-swiss.ai.mit.edu/6095/articles/froomkin-metaphor/intro.html#PAGE713">713</a>-<a href="http://www-swiss.ai.mit.edu/6095/articles/froomkin-metaphor/intro.html#PAGE714">14</a>.</h3>
+
+<h3><a name="fn10"></a><a href="#fnref10">[10]</a> <i>E.g.</i>,
+Doe v. United States, 487 U.S. 201 (1988) (Doe II) (stating that
+a directive to disclose bank records was not testimonial).</h3>
+
+<h3><a name="fn11"></a><a href="#fnref11">[11]</a> <i>Id.</i> at
+210.</h3>
+
+<h3><a name="fn12"></a><a href="#fnref12">[12]</a> <i>Id.</i> at
+210 n.9 (contrasting "be[ing] forced to surrender a key to
+a strongbox containing incriminating documents" with "be[ing]
+compelled to reveal the combination to [petitioner's] wall safe").
+Supreme Court Justices have expressed even further doubt as to
+the meaning of "testimonial." California v. Byers, 402
+U.S. 424, 462 (1971) (Black, J., dissenting).</h3>
+
+<h3><a name="fn13"></a><a href="#fnref13">[13]</a> Warden v. Hayden,
+387 U.S. 294, 302-03 (1967) ("The items of clothing involved
+in this case are not 'testimonial' . . . in nature, and their
+introduction therefore did not compel respondent to become a witness
+against himself in violation of the Fifth Amendment.") (citing
+Schmerber v. California, 384 U.S. 757, 761 (1966)).</h3>
+
+<h3><a name="fn14"></a><a href="#fnref14">[14]</a> Schmerber v.
+California, 384 U.S. 757 (1966).</h3>
+
+<h3><a name="fn15"></a><a href="#fnref15">[15]</a> Pennsylvania
+v. Muniz, 496 U.S. 582 (1990).</h3>
+
+<h3><a name="fn16"></a><a href="#fnref16">[16]</a> <i>See, e.g.,</i>
+M<font size="-1">ASS</font>. G<font size="-1">EN</font>. L. ch.
+272, §§ 18 (fornication), 21 (distributing contraceptives)
+(1992 &amp; Supp. 1995); M<font size="-1">ASS</font>. G<font size="-1">EN</font>.
+L. ch. 277 § 39 (1992 &amp; Supp. 1995) (defining fornication
+as "[s]exual intercourse between an unmarried male and an
+unmarried female"); <a href="http://www.law.cornell.edu/uscode/18/">18
+U.S.C.</a> §§ <a href="http://www.law.cornell.edu/uscode/18/707.html">707</a>,
+<a href="http://www.law.cornell.edu/uscode/18/711.html">711</a>,
+<a href="http://www.law.cornell.edu/uscode/18/711a.html">711a</a>
+(1994) (prohibiting the misuse of the 4-H symbols and characters
+Smokey Bear and Woodsy Owl, respectively).</h3>
+
+<h3><a name="fn17"></a><a href="#fnref17">[17]</a> <i>See </i>Gunn
+v. Hess, 367 S.E.2d 399 (N.C. 1988) (sustaining Fifth Amendment
+privilege for fear of prosecution for adultery and fornication);
+Hollowell v. Hollowell, 369 S.E.2d 451 (Va. App. 1988); <i>In
+re</i> Grant, 264 N.W.2d 586 (Wis. 1978); Choi v. State, 560 A.2d
+1108 (Md. 1989) (prosecution's statement that it would not prosecute
+did not remove privilege).</h3>
+
+<h3><a name="fn18"></a><a href="#fnref18">[18]</a> The possibility
+of a testimonial key suggests one respect in which use immunity
+may be broader than transactional immunity. Transactional immunity
+extends "absolute immunity against future prosecution for
+the offense to which the question relates." Counselman v.
+Hitchcock, 142 U.S. 547, 586 (1892). Use immunity, by contrast,
+requires the prosecution to show that "the evidence it proposes
+to use is derived from a legitimate source wholly independent
+of the compelled testimony." Kastigar v. United States, 406
+U.S. 441, 460 (1972). "Immunity from the use of compelled
+testimony, as well as evidence derived directly and indirectly
+therefrom, affords this protection." <i>Id</i>. at 453. <br>
+Thus, transactional immunity for the compulsory production of
+the cryptographic key would extend protection only to the offense
+mentioned in the testimonial key, not to the wholly unrelated
+transaction mentioned in the document. In the example in the text,
+that might be fornication in Massachusetts or using Woodsy Owl
+to advertise one's 4-H group. Because the plaintext of the document
+is derived from the key, the protection under use immunity must
+extend to the wholly unrelated crime mentioned in the document--say,
+a bank robbery. Whether the Supreme Court in a future case that
+raises this issue remains true to its verbal formulations is beyond
+the scope of this paper.</h3>
+
+<h3><a name="fn19"></a><a href="#fnref19">[19]</a> One difference
+that may be significant as an evidentiary matter, but which will
+not alter duties to produce the key, is that a cryptographic key
+that encrypts documents may not be able to decrypt them. Froomkin,
+<i>supra</i> <a href="#fn2">note 2</a>, at <a href="http://www-swiss.ai.mit.edu/6095/articles/froomkin-metaphor/appendices.html#PAGE890">890</a>-<a href="http://www-swiss.ai.mit.edu/6095/articles/froomkin-metaphor/appendices.html#PAGE894">94</a>
+(describing public-key encryption). By contrast, a safe-deposit
+box key that locks the box must be capable of opening the box.
+Public-key encryption means that one cannot assume that the possessor
+or even the encrypter of encrypted files can decrypt them. Thus,
+even if the government finds encrypted files in a person's possession,
+a dishonest possessor may be credibly able to deny the ability
+to decrypt the documents.</h3>
+
+<h3><a name="fn20"></a><a href="#fnref20">[20]</a> Doe v. United
+States, 487 U.S. 201, 210 n.9 (1988) (Doe II). The Court had earlier
+suggested that the privilege could exist with respect to a combination
+to a safe. Couch v. United States, 409 U.S. 322, 333 &amp; n.16
+(1973) (citing United States v. Guterma, 272 F.2d 344 (2d Cir.
+1959)).</h3>
+
+<h3><a name="fn21"></a><a href="#fnref21">[21]</a> 8 J<font size="-1">OHN</font>
+H. W<font size="-1">IGMORE</font>, E<font size="-1">VIDENCE</font>
+§ 2265, at 400 ( John T. McNaughton rev., 1961). <i>See also</i>
+M<font size="-1">ICHAEL</font> J. S<font size="-1">AKS</font>
+&amp;R<font size="-1">EID</font> H<font size="-1">ASTIE</font>,
+S<font size="-1">OCIAL</font> P<font size="-1">SYCHOLOGY</font>
+<font size="-1">IN</font> C<font size="-1">OURT</font> (1978).</h3>
+
+<h3><a name="fn22"></a><a href="#fnref22">[22]</a> Schmerber v.
+California, 384 U.S. 757, 764 (1966) (quoting Counselman v. Hitchcock,
+142 U.S. 547, 562 (1892)). <i>See also </i>United States v. Cloyd,
+25 C.M.R. 908, 914-15 (1958); Heichelbech v. State, 281 N.E.2d
+102, 105 (Ind. 1972).</h3>
+
+<h3><a name="fn23"></a><a href="#fnref23">[23]</a> 496 U.S. 582
+(1990).</h3>
+
+<h3><a name="fn24"></a><a href="#fnref24">[24]</a> <i>Id</i>. at
+598-99.</h3>
+
+<h3><a name="fn25"></a><a href="#fnref25">[25]</a> <i>Id</i>. at
+599.</h3>
+
+<h3><a name="fn26"></a><a href="#fnref26">[26]</a> <i>Id. Cf</i>.
+Braswell v. United States, 487 U.S. 99, 126 (1988) (Kennedy, J.,
+dissenting) ("Physical acts will constitute testimony if
+they probe the state of mind, memory, perception, or cognition
+of the witness").</h3>
+
+<h3><a name="fn27"></a><a href="#fnref27">[27]</a> Although Counselman
+v. Hitchcock, 142 U.S. 547, 586 (1892), held that a guarantee
+of immunity, "to be valid, must afford absolute immunity
+against future prosecution for the offense to which the questions
+relates," <i>Kastigar </i>held that this "transactional
+immunity" was unnecessary, so long as the prosecution showed
+that "the evidence it proposes to use is derived from a legitimate
+source wholly independent of the compelled testimony." Kastigar
+v. United States, 406 U.S. 441, 460 (1972). "Immunity from
+the use of compelled testimony, as well as evidence derived directly
+and indirectly therefrom, affords this protection." <i>Id</i>.
+at 453.</h3>
+
+<h3><a name="fn28"></a><a href="#fnref28">[28]</a> <i>Federal Guidelines
+for Searching and Seizing Computers</i>, 56 C<font size="-1">RIM</font>.
+L. R<font size="-1">EP</font>. (BNA) No. 12, at 2023, 2038 (Dec.
+21, 1994).</h3>
+
+<h3><a name="fn29"></a><a href="#fnref29">[29]</a> Braswell v.
+United States, 487 U.S. 99, 118 (1988).</h3>
+
+<h3><a name="fn30"></a><a href="#fnref30">[30]</a> United States
+v. Doe, 465 U.S. 605, 612-14 (1984) (Doe I).</h3>
+
+<h3><a name="fn31"></a><a href="#fnref31">[31]</a> Froomkin, <i>supra</i>
+<a href="#fn2">note 2</a>, at 872 n.711.</h3>
+
+<h3><a name="fn32"></a><a href="#fnref32">[32]</a> Fisher v. United
+States, 425 U.S. 391, 410 (1976).</h3>
+
+<h3><a name="fn33"></a><a href="#fnref33">[33]</a> <i>Doe I, </i>465
+U.S. at 614 n.13.</h3>
+
+<h3><a name="fn34"></a><a href="#fnref34">[34]</a> <i>Id</i>. at
+613. Moreover, as the <i>Fisher</i> Court observed, because the
+papers belonged to the accountant, the taxpayers' production of
+the papers would not serve to authenticate or vouch for the accuracy
+of the accountant's work. <i>Fisher</i>, 425 U.S. at 413. <i>See
+also</i> Braswell v. United States, 487 U.S. 99, 104 n.3 (1988).
+<i>Accord</i> <i>In re</i> Grand Jury Proceedings: Subpoenas for
+Documents, 41 F.3d 377, 380 (8th Cir. 1994) (barring production,
+because the government could not independently authenticate the
+documents and failed to provide use immunity).</h3>
+
+<h3><a name="fn35"></a><a href="#fnref35">[35]</a> <i>Fisher, </i>425
+U.S. at 411.</h3>
+
+<h3><a name="fn36"></a><a href="#fnref36">[36]</a> <i>Braswell</i>,
+487 U.S. at 130 (Kennedy, J., dissenting) (noting that once immunity
+is granted, the government "would be free to use the contents
+of the records against everyone, and it would be free to use any
+testimonial act implicit in production against all but the custodian
+it selects."). <i>Cf. Doe I</i>, 465 U.S. at 617 n.17 (1984)
+(rejecting the argument that "any grant of use immunity must
+cover the contents of the documents as well as the act of production",
+because "use immunity need only protect . . . from the self-incrimination
+that might accompany the act of producing. . . .").</h3>
+
+<h3><a name="fn37"></a><a href="#fnref37">[37]</a> <i>Fisher</i>
+also cannot and does not purport to represent a holding on the
+subject of the production of papers written by the person under
+subpoena. <i>See Fisher</i>, 425 U.S. at 394 (the items sought
+were written by the accountant, with the possible exception of
+some correspondence that would have been seizable under the <i>Boyd</i>
+case as an instrumentality of fraud).</h3>
+
+<h3><a name="fn38"></a><a href="#fnref38">[38]</a> <i>See Doe I,</i>
+465 U.S. at 615-16.</h3>
+
+<h3><a name="fn39"></a><a href="#fnref39">[39]</a> <i>Id</i>. at
+605.</h3>
+
+<h3><a name="fn40"></a><a href="#fnref40">[40]</a> Doe v. United
+States, 487 U.S. 201 (1988) (Doe II).</h3>
+
+<h3><a name="fn41"></a><a href="#fnref41">[41]</a> Braswell v.
+United States, 487 U.S. 99, 102 (1988).</h3>
+
+<h3><a name="fn42"></a><a href="#fnref42">[42]</a> Kastigar v.
+United States, 406 U.S. 441, 460 (1972). The statutes governing
+use immunity provided by federal law are 18 U.S.C. §§
+<a href="http://www.law.cornell.edu/uscode/18/6002.html">6002</a>,
+<a href="http://www.law.cornell.edu/uscode/18/6003.html">6003</a>
+(1994).</h3>
+
+<h3><a name="fn43"></a><a href="#fnref43">[43]</a> <i>Kastigar</i>,
+406 U.S. at 453.</h3>
+
+<h3><a name="fn44"></a><a href="#fnref44">[44]</a> <i>Id</i>. at
+460.</h3>
+
+<h3><a name="fn45"></a><a href="#fnref45">[45]</a> <i>Id</i>. <i>Kastigar</i>,
+by suggesting that one can use the coerced confession cases to
+show when the use of evidence derived from compelled statements
+is impermissible, shows that a causal relationship between the
+compelled testimony and the evidence sought to be introduced is
+enough. <i>See id</i>. at 461.</h3>
+
+<h3><a name="fn46"></a><a href="#fnref46">[46]</a> <i>Kastigar</i>,
+406 U.S. at 458-59 (quoting Murphy v. Waterfront Comm'n, 378 U.S.
+52, 79 (1964)). Use immunity applies to "the compelled testimony
+and its fruits." Murphy v. Waterfront Comm'n, 378 U.S. 52,
+79 (1964). Under this rule, the prosecutors in a second proceeding
+"have the burden of showing that their evidence is not tainted
+by establishing that they had an independent, legitimate source
+for the disputed evidence." <i>Id</i>. at 79 n.18.</h3>
+
+<h3><a name="fn47"></a><a href="#fnref47">[47]</a> That the test
+is one of cause in fact and not one of the use of the compelled
+testimony itself seems clear from the Court's use of the "fruit
+of the poisonous tree" analysis. <i>See Kastigar</i>, 406
+U.S. at 461. However, the analysis is stricter for compelled testimony.
+<i>Id</i>. If the motive for a witness' testimony is immunized
+testimony, the testimony of the witness who was motivated by the
+immunized testimony cannot be used. United States v. North, 920
+F.2d 940, 942 &amp; n.1 (D.C. Cir. 1990) (citing United States
+v. Brimberry, 803 F.2d 908, 915-17 (7th Cir. 1986); United States
+v. Hampton, 775 F.2d 1479, 1489 (11th Cir. 1985); United States
+v. Kurzer, 534 F.2d 511, 517-18 (2d Cir. 1976)).</h3>
+
+<h3><a name="fn48"></a><a href="#fnref48">[48]</a> 354 U.S. 118
+(1957).</h3>
+
+<h3><a name="fn49"></a><a href="#fnref49">[49]</a> Braswell v.
+United States, 487 U.S. 99, 114 (1988) (citing <i>Curcio</i>,
+354 U.S. at 123-24).</h3>
+
+<h3><a name="fn50"></a><a href="#fnref50">[50]</a> Gouled v. United
+States, 255 U.S. 298, 306 (1921) (Clarke, J., for a unanimous
+court). <i>Gouled</i> expressly held that when a government agent
+seized documents in violation of the Fourth Amendment, their introduction
+into court violated the Fifth Amendment. <i>Id</i>. <i>See also</i>,
+<i>e.g.</i>, Olmstead v. United States, 277 U.S. 438, 478-79 (1928)
+(Brandeis, J., dissenting) ("To protect that right [of privacy],
+every unjustifiable intrusion by the Government upon the privacy
+of the individual, whatever the means employed, must be deemed
+a violation of the Fourth Amendment. And the use, as evidence
+in a criminal proceeding, of facts ascertained by such intrusion
+must be deemed a violation of the Fifth."); Silverthorne
+Lumber Co. v. United States, 251 U.S. 385, 391 (1920) (Holmes,
+J.).</h3>
+
+<h3><a name="fn51"></a><a href="#fnref51">[51]</a> <i>Gouled,</i>
+255 U.S. at 306.</h3>
+
+<h3><a name="fn52"></a><a href="#fnref52">[52]</a> Braswell v.
+United States, 487 U.S. 99, 130 (1988) (Kennedy, J., dissenting)
+(once immunity is granted, the government "would be free
+to use the contents of the records against everyone, and it would
+be free to use any testimonial act implicit in production against
+all but the custodian it selects").</h3>
+
+<h3><a name="fn53"></a><a href="#fnref53">[53]</a> A possible analogy
+is the compulsory interpretation of documents. My research has
+turned up no cases involving interpretation. Independently, Froomkin
+states, "I have been unable to find a single criminal case
+in which the government has attempted to force a defendant to
+translate her message." Froomkin, <i>supra</i> <a href="#fn2">note
+2</a>, at <a href="http://www-swiss.ai.mit.edu/6095/articles/froomkin-metaphor/partIVBC.html#PAGE866">866</a>
+<a href="http://www-swiss.ai.mit.edu/6095/articles/froomkin-metaphor/notes-IVBC.html#ENDNOTE687">n.687</a>.
+One civil case upheld a witness' refusal to explain a tape, though
+he was the only one who could do it. Traficant v. Commissioner,
+89 T.C. 501 (1987), <i>aff'd</i>, 884 F.2d 258 (6th Cir. 1989).
+The compulsory production of a cryptographic key is not so invasive
+in one respect as compulsory interpretation, because there is
+no judgment involved or continuing cognitive work involved in
+producing the key: either it works or it does not work.</h3>
+
+<h3><a name="fn54"></a><a href="#fnref54">[54]</a> Doe v. United
+States, 487 U.S. 201, 210 (1988) (Doe II).</h3>
+
+<h3><a name="fn55"></a><a href="#fnref55">[55]</a> United States
+v. Euge, 444 U.S. 707, 717 n.11 (1980) (citing United States v.
+Dionisio, 410 U.S. 1, 6 (1973)).</h3>
+
+<h3><a name="fn56"></a><a href="#fnref56">[56]</a> United States
+v. Doe, 465 U.S. 605, 611 (1984) (Doe I) (quoting Fisher v. United
+States, 425 U.S. 391, 409 (1976)).</h3>
+
+<h3><a name="fn57"></a><a href="#fnref57">[57]</a> Counselman v.
+Hitchcock, 142 U.S. 547, 566 (1892).</h3>
+
+<h3><a name="fn58"></a><a href="#fnref58">[58]</a> <i>E.g</i>.,
+United States v. Sindel, 53 F.3d 874, 876 (8th Cir. 1995) (client
+identity and fee information not ordinarily privileged, but would
+be privileged where they would supply the last link in implicating
+the client or revealing confidential communications); United States
+v. Sanders, 979 F.2d 87, 91 (7th Cir. 1992); <i>In re</i> Grand
+Jury Proceedings, 946 F.2d 746, 748 (11th Cir. 1991) (concern
+for own liability); <i>In re</i> Grand Jury Proceedings, 906 F.2d
+1485, 1491 (10th Cir. 1990) (semble);<i> In re</i> Grand Jury
+Subpoenas, 896 F.2d 1267, 1273 (11th Cir. 1990); <i>In re</i>
+Grand Jury Proceedings, 680 F.2d 1026, 1027 (5th Cir. 1982) (last
+link test); NLRB v. Harvey, 349 F.2d 900, 905 (4th Cir. 1965)
+(the identity of the client may be privileged "when so much
+of the actual communication has already been disclosed that identification
+of the client amounts to a disclosure of a confidential communication");
+State v. Lamb, 690 P.2d 764, 769 (Ariz. 1984) (semble).</h3>
+
+<h3><a name="fn59"></a><a href="#fnref59">[59]</a> <i>See</i> Froomkin,
+<i>supra</i> <a href="#fn2">note 2</a>, at <a href="http://www-swiss.ai.mit.edu/6095/articles/froomkin-metaphor/appendices.html#PAGE895">895</a>-<a href="http://www-swiss.ai.mit.edu/6095/articles/froomkin-metaphor/appendices.html#PAGE897">97</a>.</h3>
+
+<h3><a name="fn60"></a><a href="#fnref60">[60]</a> <i>See</i> <i>id</i>.
+at 888-89.</h3>
+
+<h3><a name="fn61"></a><a href="#fnref61">[61]</a> Andresen v.
+Maryland, 427 U.S. 463, 473-74 (1976).</h3>
+
+<h3><a name="fn62"></a><a href="#fnref62">[62]</a> <i>Id.</i> at
+475 (citing Bellis v. United States, 417 U.S. 85, 88 (1974)).</h3>
+
+<h3><a name="fn63"></a><a href="#fnref63">[63]</a> United States
+v. Doe, 465 U.S. 605, 614 n.13 (1984) (Doe I).</h3>
+
+<h3><a name="fn64"></a><a href="#fnref64">[64]</a> <i>Id.</i> (quoting
+Fisher v. United States, 425 U.S. 391, 411 (1976)).</h3>
+
+<h3><a name="fn65"></a><a href="#fnref65">[65]</a> 24 C<font size="-1">HARLES</font>
+A. W<font size="-1">RIGHT</font> &amp; K<font size="-1">ENNETH</font>
+W. G<font size="-1">RAHAM</font>, J<font size="-1">R</font>.,
+F<font size="-1">EDERAL</font> P<font size="-1">RACTICE</font>
+<font size="-1">AND</font> P<font size="-1">ROCEDURE</font>: E<font size="-1">VIDENCE</font> § 5484, at 337 &amp; n.140 (1986).</h3>
+
+<h3><a name="fn66"></a><a href="#fnref66">[66]</a> <i>See</i> cases
+cited <i>supra</i> <a href="#fn6">note 6</a>.</h3>
+
+<h3><a name="fn67"></a><a href="#fnref67">[67]</a> 493 U.S. 549
+(1990).</h3>
+
+<h3><a name="fn68"></a><a href="#fnref68">[68]</a> <i>In re </i>Grand
+Jury Subpoena Duces Tecum Dated October 29, 1992, 1 F.3d 87, 92
+(2d Cir. 1993).</h3>
+
+<h3><a name="fn69"></a><a href="#fnref69">[69]</a> <i>Id</i>. at
+95 (Altimari, J., dissenting).</h3>
+
+<h3><a name="fn70"></a><a href="#fnref70">[70]</a> Hale v. Henkel,
+201 U.S. 43, 74-75 (1906). Thus, where privacy is not an issue,
+as under the Fourth Amendment's protection from searches and seizures
+and the takings clauses, the corporations have the same rights
+as individuals. <i>Id</i>. at 76.</h3>
+
+<h3><a name="fn71"></a><a href="#fnref71">[71]</a> Pennsylvania
+v. Muniz, 496 U.S. 582, 595 n.8 (1990) (quoting Doe v. United
+States, 487 U.S. 201, 212-13 (1988) (quoting Murphy v. Waterfront
+Comm'n, 378 U.S. 52, 55 (1964) (internal citations omitted))).
+This language from <i>Murphy</i> has also been quoted in other
+cases. <i>E.g</i>., Couch v. United States, 409 U.S. 322, 328
+(1973).</h3>
+
+<h3><a name="fn72"></a><a href="#fnref72">[72]</a> 116 U.S. 616
+(1886).</h3>
+
+<h3><a name="fn73"></a><a href="#fnref73">[73]</a> <i>Id.</i> at
+634-35. Cases after <i>Boyd</i> observe that a search for papers
+that the government seizes by main force was as much a "physical
+compulsion" as the threat of a contempt sentence for failure
+to produce. <i>See, e.g., </i>Gouled v. United States, 255 U.S.
+298, 305-06 (1921).</h3>
+
+<h3><a name="fn74"></a><a href="#fnref74">[74]</a> <i>Boyd</i>,
+116 U.S. at 622-30.</h3>
+
+<h3><a name="fn75"></a><a href="#fnref75">[75]</a> <i>Id. </i>at
+623.</h3>
+
+<h3><a name="fn76"></a><a href="#fnref76">[76]</a> <i>Id</i>.</h3>
+
+<h3><a name="fn77"></a><a href="#fnref77">[77]</a> <i>Id</i>. at
+624.</h3>
+
+<h3><a name="fn78"></a><a href="#fnref78">[78]</a> Gouled v. United
+States, 255 U.S. 298, 308 (1921) (burglars' tools and weapons).</h3>
+
+<h3><a name="fn79"></a><a href="#fnref79">[79]</a> <i>Id. </i>at
+309 ("[s]tolen or forged papers" and "contracts
+. . . used as instruments or agencies for perpetrating frauds.").</h3>
+
+<h3><a name="fn80"></a><a href="#fnref80">[80]</a> <i>See</i> Boyd,
+116 U.S. at 626-27, 630.</h3>
+
+<h3><a name="fn81"></a><a href="#fnref81">[81]</a> <i>Id</i>. at
+630.</h3>
+
+<h3><a name="fn82"></a><a href="#fnref82">[82]</a> <i>Id</i>. at
+630-32.</h3>
+
+<h3><a name="fn83"></a><a href="#fnref83">[83]</a> <i>Id. </i>at
+622-23.</h3>
+
+<h3><a name="fn84"></a><a href="#fnref84">[84]</a> <i>Id.</i> at
+629.</h3>
+
+<h3><a name="fn85"></a><a href="#fnref85">[85]</a> <i>Id.</i> at
+631-32.</h3>
+
+<h3><a name="fn86"></a><a href="#fnref86">[86]</a> <i>Id. </i>at
+622-23.</h3>
+
+<h3><a name="fn87"></a><a href="#fnref87">[87]</a> <i>Id.</i> at
+633. <i>Cf</i>. B<font size="-1">ERNARD</font> B<font size="-1">AILYN</font>,
+T<font size="-1">HE</font> I<font size="-1">DEOLOGICAL</font>
+O<font size="-1">RIGINS</font> <font size="-1">OF</font> <font size="-1">THE</font> A<font size="-1">MERICAN</font> R<font size="-1">EVOLUTION</font>
+vii-viii (1967) (arguing the influence of British legal precedents
+on American institutions at the framing).</h3>
+
+<h3><a name="fn88"></a><a href="#fnref88">[88]</a> Gouled v. United
+States, 255 U.S. 298, 308-09 (1921) (Clarke, J., for a unanimous
+court).</h3>
+
+<h3><a name="fn89"></a><a href="#fnref89">[89]</a> <i>E.g.</i>,
+Fisher v. United States, 425 U.S. 391, 407 (1975) (suggesting
+only that <i>Boyd</i> has "not stood the test of time").</h3>
+
+<h3><a name="fn90"></a><a href="#fnref90">[90]</a> United States
+v. Poller, 43 F.2d 911, 914 (2d Cir. 1930).</h3>
+
+<h3><a name="fn91"></a><a href="#fnref91">[91]</a> <i>Id</i>.</h3>
+
+<h3><a name="fn92"></a><a href="#fnref92">[92]</a> <i>See </i>Katz
+v. United States, 389 U.S. 347 (1967).</h3>
+
+<h3><a name="fn93"></a><a href="#fnref93">[93]</a> <i>See </i>Hale
+v. Henkel, 201 U.S. 43, 74-75 (1906).</h3>
+
+<h3><a name="fn94"></a><a href="#fnref94">[94]</a> <i>See</i> Fisher
+v. United States, 425 U.S. 391, 411-12 (1975); Braswell v. United
+States, 487 U.S. 99, 112 (1988).</h3>
+
+<h3><a name="fn95"></a><a href="#fnref95">[95]</a> <i>Cf</i>. 18
+U.S.C. § 1961(4) (1988) (defining "enterprise"
+in the Racketeer Influenced and Corrupt Organizations Act to include
+associations in fact that were not legal entities); National Org.
+for Women, Inc. v. Scheidler, 114 S. Ct. 798, 803-04 (1994) (noting
+broad definition of "enterprise").</h3>
+
+<h3><a name="fn96"></a><a href="#fnref96">[96]</a> <i>See</i> Gouled
+v. United States, 255 U.S. 298, 309 (1921).</h3>
+
+<h3><a name="fn97"></a><a href="#fnref97">[97]</a> Couch v. United
+States, 409 U.S. 322, 350 (1973) (Marshall, J., dissenting).</h3>
+
+<h3><a name="fn98"></a><a href="#fnref98">[98]</a> Hale v. Henkel,
+201 U.S. 43, 69-70 (1906).</h3>
+
+<h3><a name="fn99"></a><a href="#fnref99">[99]</a> <i>Couch</i>,
+409 U.S. at 328. This is congruent with the Fourth Amendment,
+which does not protect misplaced confidence, and so avoids privacy
+issues. Hoffa v. United States, 385 U.S. 293, 302 (1966).</h3>
+
+<h3><a name="fn100"></a><a href="#fnref100">[100]</a> United States
+v. Saline Bank, 26 U.S. (1 Pet.) 100, 104 (1828).</h3>
+
+<h3><a name="fn101"></a><a href="#fnref101">[101]</a> <i>Id</i>.
+The Court rejected Justice Harlan's argument that "<i>Saline
+Bank</i> stands for no constitutional principle whatever."
+Murphy v. Waterfront Comm'n, 378 U.S. 52, 69 n.11 (1964) (criticizing<i>
+</i>Hutcheson v. United States, 369 U.S. 599, 608 n.13 (1962)
+(Harlan, J., plurality opinion) (citing 2 J<font size="-1">OSEPH</font>
+S<font size="-1">TORY</font>, C<font size="-1">OMMENTARIES</font>
+<font size="-1">ON</font> E<font size="-1">QUITY</font>, §
+1494 n.1 (1836))). <br>
+Early commentators have likewise concluded that the privilege
+protects against "the production of <i>documents</i> or <i>chattels</i>
+by a person (whether ordinary witness or party witness) in response
+to a subpoena, or to a motion to order production, or to other
+form of <i>process relying on his moral responsibility for truthtelling</i>."
+<i>See</i> 8 W<font size="-1">IGMORE</font>, <i>supra</i> <a href="#fn21">note 21</a>, § 2264, at 379 n.1 (emphasis in
+original). Pennsylvania v. Muniz, 496 U.S. 582 (1990), goes beyond
+Wigmore by prohibiting the use of information that was not sought
+for its truth and by suggesting that prohibition extends to the
+use of physical data as part of a lie-detector test. Wigmore does
+suggest that the testimonial content is "the witness' assurance,
+compelled as an incident of the process, that the articles produced
+are the ones demanded." <i>Id</i>. at 380, <i>cited with
+approval in</i> Fisher v. United States, 425 U.S. 391, 411 (1975).</h3>
+
+<h3><a name="fn102"></a><a href="#fnref102">[102]</a> Hale v. Henkel,
+201 U.S. 43, 76 (1906). <i>Accord</i> Weeks v. United States,
+232 U.S. 383, 397 (1914) (quoting <i>Hale</i>).</h3>
+
+<h3><a name="fn103"></a><a href="#fnref103">[103]</a> 255 U.S.
+298 (1921).</h3>
+
+<h3><a name="fn104"></a><a href="#fnref104">[104]</a> <i>Id.</i>
+at 306.</h3>
+
+<h3><a name="fn105"></a><a href="#fnref105">[105]</a> Olmstead
+v. United States, 277 U.S. 438, 478 (1928) (Brandeis, J., dissenting);
+Silverthorne Lumber Co. v. United States, 251 U.S. 385, 391 (1920)
+(Holmes, J.).</h3>
+
+<h3><a name="fn106"></a><a href="#fnref106">[106]</a> <i>See</i>,
+<i>e.g.</i>, United States v. White, 322 U.S. 694, 698 (1944);
+Wilson v. United States, 221 U.S. 361, 377 (1911).</h3>
+
+<h3><a name="fn107"></a><a href="#fnref107">[107]</a> 410 U.S.
+1 (1973).</h3>
+
+<h3><a name="fn108"></a><a href="#fnref108">[108]</a> <i>Id</i>.
+at 11.</h3>
+
+<h3><a name="fn109"></a><a href="#fnref109">[109]</a> Andresen
+v. Maryland, 427 U.S. 463, 475 (1976) (citing Bellis v. United
+States, 417 U.S. 85, 88 (1974) (quoting United States v. White,
+322 U.S. 694, 698 (1944))).</h3>
+
+<h3><a name="fn110"></a><a href="#fnref110">[110]</a> <i>Id.</i>
+at 473-74.</h3>
+
+<h3><a name="fn111"></a><a href="#fnref111">[111]</a> <i>Id.</i>
+("Thus, although the Fifth Amendment may protect an individual
+from complying with a subpoena for the production of his personal
+records in his possession because the very act of production may
+constitute a compulsory authentication of incriminating information,
+. . . a seizure of the same materials by law enforcement officers
+differs in a crucial respect, -- the individual against whom the
+search is directed is not required to aid in the discovery, production,
+or authentication of incriminating evidence."). <i>Id</i>.</h3>
+
+<h3><a name="fn112"></a><a href="#fnref112">[112]</a> Warden v.
+Hayden, 387 U.S. 294, 301-02 (1967).</h3>
+
+<h3><a name="fn113"></a><a href="#fnref113">[113]</a> <i>Id</i>.
+at 302-03.</h3>
+
+<h3><a name="fn114"></a><a href="#fnref114">[114]</a> Fisher v.
+United States, 425 U.S. 391, 401 n.7 (1976).</h3>
+
+<h3><a name="fn115"></a><a href="#fnref115">[115]</a> <i>See </i>Warden
+v. Hayden, 387 U.S. 294, 301-02 (1967).</h3>
+
+<h3><a name="fn116"></a><a href="#fnref116">[116]</a> Johnson v.
+United States, 228 U.S. 457, 458 (1913). Holmes' opinion was quoted
+by the Court in Couch v. United States, 409 U.S. 322, 328 (1973).
+<i>Couch</i> further suggested that the Fifth Amendment might
+be violated by "[i]nquisitorial pressure . . . to . . . produce
+incriminating documents," but there was no such pressure
+"[i]n the present case." <i>Id</i>. at 329.</h3>
+
+<h3><a name="fn117"></a><a href="#fnref117">[117]</a> <i>See </i>Andresen
+v. Maryland, 427 U.S. 463, 473 (1976); <i>Couch</i>, 409 U.S.
+at 328.</h3>
+
+<h3><a name="fn118"></a><a href="#fnref118">[118]</a> <i>Johnson</i>,
+228 U.S. at 458. The defendant objected to the bankruptcy trustee's
+producing records that incriminated the bankrupt person. <i>Id</i>.</h3>
+
+<h3><a name="fn119"></a><a href="#fnref119">[119]</a> Holt v. United
+States, 218 U.S. 245, 252-53 (1910) (Holmes, J.).</h3>
+
+<h3><a name="fn120"></a><a href="#fnref120">[120]</a> <i>Id</i>.
+at 252-53 (emphasis added).</h3>
+
+<h3><a name="fn121"></a><a href="#fnref121">[121]</a> Silverthorne
+Lumber Co. v. United States, 251 U.S. 385, 391 (1920).</h3>
+
+<h3><a name="fn122"></a><a href="#fnref122">[122]</a> Hale v. Henkel,
+201 U.S. 43, 76 (1906). <i>Accord</i> Weeks v. United States,
+232 U.S. 383, 397 (1914).</h3>
+
+<h3><a name="fn123"></a><a href="#fnref123">[123]</a> Gouled v.
+United States, 255 U.S. 298, 306 (1921).</h3>
+
+<h3><a name="fn124"></a><a href="#fnref124">[124]</a> Fisher v.
+United States, 425 U.S. 391 (1976).</h3>
+
+<h3><a name="fn125"></a><a href="#fnref125">[125]</a> <i>Id</i>.</h3>
+
+<h3><a name="fn126"></a><a href="#fnref126">[126]</a> <i>Id</i>.</h3>
+
+<h3><a name="fn127"></a><a href="#fnref127">[127]</a> <i>Id</i>.
+at 411. (The Court's concern for testimonial incrimination may
+have been dictated by Curcio v. United States, 354 U.S. 118, 125
+(1957), which held that because production identified and authenticated
+a document, further compulsory identification or authentication
+did not violate the privilege.)</h3>
+
+<h3><a name="fn128"></a><a href="#fnref128">[128]</a> <i>Id.</i>
+at 497 (emphasis added). <i>See also id</i>. at 510-511.</h3>
+
+<h3><a name="fn129"></a><a href="#fnref129">[129]</a> The Court
+has the power to fashion a common-law privilege under Federal
+Rule of Evidence 501. <i>Cf</i>. Trammel v. United States, 445
+U.S. 40 (1980) (narrowing common law privilege against adverse
+spousal testimony). The Court has in the past held that a privilege
+exists against discovery of material that would expose a party
+to penalties. United States v. Saline Bank, 26 U.S. (1 Pet.) 100,
+104 (1828) (Marshall, C.J.) ("The rule clearly is, that a
+party is not bound to make any discovery which would expose him
+to penalties, and this case falls within it."). Of course,
+a non-constitutional privilege rule would not apply to the states
+or, in current law, in diversity cases in federal court. F<font size="-1">ED</font>. R. E<font size="-1">VID</font>. 501.</h3>
+
+<h3><a name="fn130"></a><a href="#fnref130">[130]</a> 24 W<font size="-1">RIGHT</font> &amp; G<font size="-1">RAHAM</font>, <i>supra</i>
+<a href="#fn65">note 65</a>, § 5484, at 324 &amp; n.42 (citing
+J<font size="-1">OHN</font> H<font size="-1">ENRY</font> W<font size="-1">IGMORE</font>, W<font size="-1">IGMORE</font>'<font size="-1">S</font> C<font size="-1">ODE</font> <font size="-1">OF</font>
+<font size="-1">THE</font> R<font size="-1">ULES</font> <font size="-1">OF</font> E<font size="-1">VIDENCE</font> § 2436
+(3d ed. 1942)) (attorney); 25 W<font size="-1">RIGHT</font> &amp;
+G<font size="-1">RAHAM</font>, <i>supra</i> <a href="#fn65">note
+65</a>, § 5572, at 473 (spouse).</h3>
+
+<h3><a name="fn131"></a><a href="#fnref131">[131]</a> 5 W<font size="-1">RIGHT</font> &amp; G<font size="-1">RAHAM</font>, <i>supra</i>
+<a href="http://iq.org/%7Eproff/rubberhose.org/current/src/doc/fn65">note 65</a>, § 5572, at 479. See also <i>id</i>.
+at 493 (discussing marital privilege in relation to self-incrimination).</h3>
+
+<h3><a name="fn132"></a><a href="#fnref132">[132]</a> <i>E.g.,<b>
+</b>In re </i>Grand Jury Proceedings, 600 F.2d 215 (9th Cir. 1979)
+(shielding fee payments); <i>In re </i>Grand Jury Proceedings,
+517 F.2d 666, 670-71 &amp; nn. 2-3 (5th Cir. 1975) (semble, collecting
+cases); Baird v. Koerner, 279 F.2d 623 (9th Cir. 1960) (anonymous
+restitution to IRS through attorney); Tillotson v. Boughner, 350
+F.2d 663 (7th Cir. 1965) (semble).</h3>
+
+<h3><a name="fn133"></a><a href="#fnref133">[133]</a> Upjohn Corp.
+v. United States, 449 U.S. 383 (1981). <i>See</i> Note, <i>Privileged
+Communications: Inroads on the "Control Group" Test
+in the Corporate Area</i>, 22 S<font size="-1">YR</font>. L. R<font size="-1">EV</font>. 759, 762 (1971); David Simon, <i>The Attorney-Client
+Privilege As Applied to Corporations</i>, 65 Y<font size="-1">ALE</font>
+L.J. 953, 955-56 (1956); Note, <i>Attorney Client Privilege for
+Corporate Clients: The Control Group Test</i>, 84 H<font size="-1">ARV</font>.
+L. R<font size="-1">EV</font>. 424, 427 (1970).</h3>
+
+<h3><a name="fn134"></a><a href="#fnref134">[134]</a> 26 W<font size="-1">RIGHT</font> &amp; G<font size="-1">RAHAM</font>, <i>supra</i>
+<a href="#fn65">note 65</a>, § 5663, at 20 (Supp. 1995).</h3>
+
+<h3><a name="fn135"></a><a href="#fnref135">[135]</a> Bredice v.
+Doctors Hosp., Inc., 50 F.R.D. 249 (D.D.C. 1970), <i>aff'd</i>,
+479 F.2d 920 (D.C. Cir. 1973) (protecting minutes of hospital
+staff meetings regarding improvement in patient care from discovery
+in a malpractice suit); Health Care Quality Improvement Act of
+1986, 42 U.S.C. § <a href="http://www.law.cornell.edu/uscode/42/11112.html">11112(a)</a>
+(1988).</h3>
+
+<h3><a name="fn136"></a><a href="#fnref136">[136]</a> Fourteen
+states have environmental audit privilege laws. Those states are:
+Arkansas, 1995 A<font size="-1">RK</font>. A<font size="-1">CTS</font>
+350; Colorado, C<font size="-1">OLO</font>. R<font size="-1">EV</font>.
+S<font size="-1">TAT</font>. A<font size="-1">NN</font>. §
+13-25-126.5 (West 1987 &amp; Supp. 1995); Idaho, I<font size="-1">DAHO</font>
+C<font size="-1">ODE</font> § 9-802 (1990 &amp; Supp. 1995);
+Illinois, I<font size="-1">LL</font>. A<font size="-1">NN</font>.
+S<font size="-1">TAT</font>. ch. 415, para. 5/52.2 (Smith-Hurd
+1993 &amp; Supp. 1995); Indiana, I<font size="-1">ND</font>. C<font size="-1">ODE</font> A<font size="-1">NN</font>. § <a href="http://www.law.indiana.edu/codes/in/13/13-10-3-3.html">13-10-3-3</a>
+(Burns 1990 &amp; Supp. 1995); Kansas, 1995 Kan. Sess. Laws 204;
+Kentucky, K<font size="-1">Y</font>. R<font size="-1">EV</font>.
+S<font size="-1">TAT</font>. A<font size="-1">NN</font>. §
+224.01-040 (Michie/Bobbs-Merrill 1995); Minnesota, 1995 Minn.
+Sess. Law Serv. <a href="gopher://gopher.revisor.leg.state.mn.us:70/00/.revisor/slaws/Chapter.168.Hf1479">168</a>
+(West); Mississippi, 1995 Miss. Laws 627; Oregon, O<font size="-1">R</font>.
+R<font size="-1">EV</font>. S<font size="-1">TAT</font>. §
+468.963 (1992 &amp; Supp. 1994); Texas, 1995 Tex. Sess. Law Serv.
+<a href="gopher://capitol.tlc.texas.gov:70/0R0-7763-/tlli/sl/sb/sb200/SB219/SB219.ENR">219</a>
+(Vernon); Utah, U<font size="-1">TAH</font> C<font size="-1">ODE</font>
+A<font size="-1">NN</font>. § 19-7-104 (1995); Virginia,
+V<font size="-1">A</font>. C<font size="-1">ODE</font> A<font size="-1">NN</font>. §10.1-1198 (Michie 1993 &amp; Supp.
+1995); and Wyoming, W<font size="-1">YO</font>. S<font size="-1">TAT</font>.
+§ 35-11-1105 (1994 &amp; Supp. 1995).</h3>
+
+<h3><a name="fn137"></a><a href="#fnref137">[137]</a> <i>See</i>
+Note, <i>The Privilege of Self-Critical Analysis</i>, 96 H<font size="-1">ARV</font>. L. R<font size="-1">EV</font>. 1083 (1983).
+<i>But see</i> University of Pennsylvania v. EEOC, 493 U.S. 182,
+189 (1990) (no privilege of "self-critical analysis"
+to protect routine internal corporate reviews of safety-related
+matters); Dowling v. American Hawaii Cruises, Inc., 971 F.2d 423,
+425-27 (9th Cir. 1992).</h3>
+
+<h3><a name="fn138"></a><a href="#fnref138">[138]</a> 387 U.S.
+294 (1967).</h3>
+
+<h3><a name="fn139"></a><a href="#fnref139">[139]</a> 387 U.S.
+294, 304 (1967).</h3>
+
+<h3><a name="fn140"></a><a href="#fnref140">[140]</a> 389 U.S.
+347, 353 (1967).</h3>
+
+<h3><a name="fn141"></a><a href="#fnref141">[141]</a> <i>Id.</i>
+at 353.</h3>
+
+<h3><a name="fn142"></a><a href="#fnref142">[142]</a> <i>See Warden</i>,
+387 U.S. at 310 (Fortas, J., joined by Warren, C.J., concurring
+in the result) (rejecting the "totally unnecessary . . .
+repudiation of the so-called 'mere evidence' rule").</h3>
+
+<h3><a name="fn143"></a><a href="#fnref143">[143]</a> <i>Id.</i>
+at 305-06 (citing Silverthorne Lumber Co. v. United States, 251
+U.S. 385 (1920) (Holmes, J.); Gouled v. United States, 255 U.S.
+298, 308-09 (1921)). Moreover, even if there were no protection
+against the government's seizure of the property, a search might
+still offend the Fourth Amendment. <i>See</i> United States v.
+Jacobsen, 466 U.S. 109, 122 n.22 (1984).</h3>
+
+<h3><a name="fn144"></a><a href="#fnref144">[144]</a> <i>See </i>International
+News Serv. v. Associated Press, 248 U.S. 215, 240-41 (1918).</h3>
+
+<h3><a name="fn145"></a><a href="#fnref145">[145]</a> <i>See</i>,
+<i>e.g.</i>, R<font size="-1">ESTATEMENT</font> (T<font size="-1">HIRD</font>)
+<font size="-1">OF</font> U<font size="-1">NFAIR</font> C<font size="-1">OMPETITION</font>, at XI (1995) (describing "increase
+in the commercial and financial significance of intellectual property");
+<i>Id.</i> § 38 (protecting against appropriation of trade
+secrets or the commercial value of another's identity); Note,
+<i>An Assessment of the Commercial Exploitation Requirement as
+a Limit on the Right of Publicity</i>, 96 H<font size="-1">ARV</font>.
+L. R<font size="-1">EV</font>. 1703 (1983); George M. Armstrong,
+Jr., <i>The Reification of Celebrity: Persona As Property,</i>
+51 L<font size="-1">A</font>. L. R<font size="-1">EV</font>. 443
+(1991); Midler v. Ford Motor Co., 849 F.2d 460, 462-63 (9th Cir.
+1988).</h3>
+
+<h3><a name="fn146"></a><a href="#fnref146">[146]</a> <i>See</i>
+R<font size="-1">ESTATEMENT</font> (T<font size="-1">HIRD</font>)
+<font size="-1">OF</font> U<font size="-1">NFAIR</font> C<font size="-1">OMPETITION</font>, § 43 (1995) (trade secret protection
+against information gained from "an unauthorized interception
+of communications"). "A most fundamental human right,
+that of privacy, is threatened when industrial espionage is condoned
+or is made profitable." Kewanee Oil Co. v. Bicron Corp.,
+416 U.S. 470, 476 (1974) (Burger, C.J.).</h3>
+
+<h3><a name="fn147"></a><a href="#fnref147">[147]</a> Rakas v.
+Illinois, 439 U.S. 128, 143-44 n.12 (1978).</h3>
+
+<h3><a name="fn148"></a><a href="#fnref148">[148]</a> Minnesota
+v. Olson, 495 U.S. 91, 95-96 (1990) (quoting Rakas v. Illinois,
+439 U.S. 128, 143 n.12 (1978) (adopting the reasonableness requirement
+from Justice Harlan's concurring opinion, Katz v. United States,
+389 U.S. 347, 361 (1967) (Harlan, J., concurring))).</h3>
+
+<h3><a name="fn149"></a><a href="#fnref149">[149]</a> Rakas v.
+Illinois, 439 U.S. 128, 143 n.12 (1978) (citing Katz v. United
+States, 389 U.S. at 361 (Harlan, J., concurring)).</h3>
+
+<h3><a name="fn150"></a><a href="#fnref150">[150]</a> <i>Id</i>.</h3>
+
+<h3><a name="fn151"></a><a href="#fnref151">[151]</a> <i>Id</i>.</h3>
+
+<h3><a name="fn152"></a><a href="#fnref152">[152]</a> United States
+v. Jacobsen, 466 U.S. 109, 122 n.22 (1984).</h3>
+
+<h3><a name="fn153"></a><a href="#fnref153">[153]</a> <i>Id. </i>at
+124 n.24.</h3>
+
+<h3><a name="fn154"></a><a href="#fnref154">[154]</a> Harlow v.
+Fitzgerald, 457 U.S. 800, 818 (1982) (providing immunity from
+a civil claim "insofar as [defendants'] conduct [did] not
+violate clearly established statutory or constitutional rights
+of which a reasonable person would have known").</h3>
+
+<h3><a name="fn155"></a><a href="#fnref155">[155]</a> California
+v. Greenwood, 486 U.S. 35, 44 (1988) (using privacy, not property
+arguments, to uphold a search and seizure of garbage, despite
+the state court's decision that state law created property interests
+in garbage). Some state courts have subsequently rejected the
+United States Supreme Court's finding that there is no reasonable
+expectation of privacy in garbage. State v. Hempele, 576 A.2d
+793 (N.J. 1990); State v. Boland, 800 P.2d 1112 (Wash. 1990).</h3>
+
+<h3><a name="fn156"></a><a href="#fnref156">[156]</a> <i>Cf.</i>
+Swift v. Tyson, 41 U.S. (16 Pet.) 1 (1842) (allowing federal courts
+to ignore state-court rulings on matters of state law), <i>overruled
+on other grounds</i>, Erie R.R. v. Tompkins, 304 U.S. 64 (1938).</h3>
+
+<h3><a name="fn157"></a><a href="#fnref157">[157]</a> <i>Compare</i>,
+<i>e.g.</i>, Smith v. Maryland, 442 U.S. 735 (1979) (acquisition
+of telephone numbers dialed with a pen register did not intrude
+on dialer's expectation of privacy) <i>with</i> State v. Hunt,
+450 A.2d 952, 955 (N.J. 1982) (contra); People v. Blair, 602 P.2d
+738, 746 (Cal. 1979) (contra); Commonwealth v. Beauford, 475 A.2d
+783, 791 (Pa. 1984) (contra); People v. Sporleder, 666 P.2d 135
+(Colo. 1983) (contra); State v. Gunwall, 720 P.2d 808, 813 (Wash.
+1986) (contra); State v. Thompson, 760 P.2d 1162 (Idaho 1988)
+(contra); Rothman v. State, 779 P.2d 1, 7 (Haw. 1989) (contra);
+Richardson v. State, 865 S.W.2d 944, 952-53 (Tex. Cr. App. 1993)
+(en banc) (contra).</h3>
+
+<h3><a name="fn158"></a><a href="#fnref158">[158]</a> Griswold
+v. Connecticut, 381 U.S. 479, 509 (1965) (Black, J., dissenting)
+("'Privacy' is a broad, abstract and ambiguous concept which
+can easily be shrunken in meaning but which can also, on the other
+hand, easily be interpreted as a constitutional ban against many
+things other than searches and seizures.").</h3>
+
+<h3><a name="fn159"></a><a href="#fnref159">[159]</a> <i>Compare
+</i>Kewanee Oil Co. v. Bicron Corp., 416 U.S. 470, 476 (1974)
+(citing with approval E.I. duPont deNemours &amp; Co. v. Christopher,
+431 F.2d 1012 (5th Cir. 1970) (holding that overflights are an
+invasion of trade secrets), <i>cert. denied</i>, 400 U.S. 1024
+(1971)) <i>with</i> California v. Ciraolo, 476 U.S. 207 (1986)
+(the Fourth Amendment does not bar such overflights) (reversing
+People v. Ciraolo, 161 Cal. App. 3d 1081, 1090, 208 Cal. Rptr.
+93, 98 (1984) ("the area searched was within defendant's
+curtilage wherein he could reasonably entertain an expectation
+of privacy")); Dow Chemical Co. v. United States, 476 U.S.
+227, 231-32 (1986) (Burger, C.J.) (allowing overflights under
+the Fourth Amendment and expressly distinguishing trade secrets
+issues) <i>and with</i> R<font size="-1">ESTATEMENT</font> (T<font size="-1">HIRD</font>) <font size="-1">OF</font> U<font size="-1">NFAIR</font>
+C<font size="-1">OMPETITION</font>, § 43 illustration 3 (1995)
+(trade secret protection against information gained from an overflight).
+<i>Compare</i> Hoffa v. United States, 385 U.S. 293, 302 (1966)
+(misplaced confidences are not protected by the Fourth Amendment)
+<i>and</i> Smith v. Maryland, 442 U.S. 735, 743-744 (1979) (pen
+registers are not protected because the phone company knows the
+number called) <i>with</i> R<font size="-1">ESTATEMENT</font>
+(T<font size="-1">HIRD</font>) <font size="-1">OF</font> U<font size="-1">NFAIR</font> C<font size="-1">OMPETITION</font> §
+41 (1995) (giving trade secrets to someone does not permit that
+person to pass on the trade secrets to another).</h3>
+
+</body></html>
