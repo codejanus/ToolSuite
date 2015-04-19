@@ -1,0 +1,1 @@
+pngquant is developed by Kornel Lesinski and contributors. It's based on code by Greg Roelofs and Jef Poskanzer.

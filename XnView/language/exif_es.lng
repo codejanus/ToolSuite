@@ -1,0 +1,1303 @@
+; ----------------------------------------------------
+[IFD]
+0101=IFD Imagen
+0102=IFD EXIF
+0103=IFD GPS
+0104=IFD Interoperabilidad
+A010=Nota del fabricante (Canon)
+A020=Nota del fabricante (Nikon)
+A030=Nota del fabricante (Nikon)
+A040=Nota del fabricante (Casio)
+A050=Nota del fabricante (Casio)
+A060=Nota del fabricante (Fuji)
+A070=Nota del fabricante (Olympus)
+A080=Nota del fabricante (Sigma)
+A090=Nota del fabricante (Sanyo)
+A0A0=Nota del fabricante (Minolta)
+A0B0=Nota del fabricante (Minolta)
+
+; --------------------- Main IFD ---------------------
+
+[0101-00FE]
+Label=
+
+[0101-0100]
+Label=Ancho de la imagen
+
+[0101-0101]
+Label=Alto de la imagen
+
+[0101-0102]
+Label=Bit por muestra
+
+[0101-0103]
+Label=Compresión
+
+[0101-0106]
+Label=Modelo de color
+
+[0101-010A]
+Label=Disposición de los datos
+
+[0101-010D]
+Label=Nombre de archivo
+
+[0101-010E]
+Label=Descripción de la imagen
+
+[0101-010F]
+Label=Marca de la cámara
+
+[0101-0110]
+Label=Modelo de la cámara
+
+[0101-0111]
+Label=Franja de offset
+
+[0101-0112]
+Label=Orientación
+ValueList=1#arriba-izquierda, 2#arriba-derecha, 3#debajo-derecha, 4#debajo-izquierda, 5#izquierda-arriba, 6#derecha-arriba, 7#derecha-debajo, 8#izquierda-arriba
+
+[0101-0115]
+Label=Canales de color por pixel
+
+[0101-0116]
+Label=Número de filas por franja
+
+[0101-0117]
+Label=Número de bytes por franja
+
+[0101-011A]
+Label=Resolución X [pixel/unidad]
+
+[0101-011B]
+Label=Resolución Y [pixel/unidad]
+
+[0101-011C]
+Label=Disposición de los planos de la imagen
+
+[0101-0128]
+Label=Unidad de resolución
+
+[0101-012D]
+Label=Función de transferencia
+
+[0101-0131]
+Label=Software/Firmware
+
+[0101-0132]
+Label=Fecha y hora de modificación
+
+[0101-013B]
+Label=Fotógrafo
+
+[0101-013E]
+Label=Punto blanco
+
+[0101-013F]
+Label=Crominancia de los colores primarios
+
+[0101-0156]
+Label=Respuesta de frecuencia
+
+[0101-0200]
+Label=JPEGProc
+
+[0101-0201]
+Label=Offset-Miniatura
+
+[0101-0202]
+Label=Largo-Miniatura
+
+[0101-0211]
+Label=Coeficientes YCbCr
+
+[0101-0212]
+Label=Percepción parte YCbCr
+
+[0101-0213]
+Label=Posicionamiento YCbCr
+ValueList=1#centrado, 2#co-sited
+
+[0101-0214]
+Label=Referencia blanco-negro
+
+[0101-828D]
+Label=CFA Repeat pattern dim
+
+[0101-828E]
+Label=CFA-Patrón
+
+[0101-828F]
+Label=Carga de pila
+
+[0101-8298]
+Label=Copyright
+
+; Camera IFD
+
+[0102-829A]
+Label=Tiempo de exposición [segundos]
+
+[0102-829D]
+Label=Abertura del diafragma
+
+[0102-83BB]
+Label=IPTC/NAA
+
+[0102-8769]
+Label=EXIF-Offset
+
+[0102-8773]
+Label=Inter color profile
+
+[0102-8822]
+Label=Modo de exposición
+ValueList=0#no especificado, 1#manual, 2#normal, 3#prioridad de velocidad, 4#prioridad de abertura, 5#creativo (lento), 6#Deportes (rápido), 7#Retratos, 8#Paisajes
+
+[0102-8824]
+Label=Sensibilidad espectral
+
+[0102-8825]
+Label=Información de GPS
+
+[0102-8827]
+Label=Sensibilidad (ISO)
+
+[0102-8828]
+Label=OECF
+
+[0102-9000]
+Label=Versión del EXIF
+
+[0102-9003]
+Label=Fecha y hora de grabación
+
+[0102-9004]
+Label=Fecha y hora de digitalización
+
+[0102-9101]
+Label=Componentes modelo de color
+
+[0102-9102]
+Label=Bits comprimidos por pixel
+
+[0102-9201]
+Label=Velocidad de obturación
+
+[0102-9202]
+Label=Valor de abertura
+
+[0102-9203]
+Label=Brillo
+
+[0102-9204]
+Label=Compensación de la exposición
+
+[0102-9205]
+Label=Máximo valor de abertura
+
+[0102-9206]
+Label=Distancia al motivo [m]
+
+[0102-9207]
+Label=Exposición
+ValueList=0#desconocida, 1#promedio, 2#central, 3#puntual, 4#multi-punto, 5#evaluativa, 6#parcial, -1#otros
+
+[0102-9208]
+Label=Fuente de luz
+ValueList=0#desconocida, 1#diurna, 2#fluorescente, 3#tungsteno, 17#norma A, 18#norma B, 19#norma C, 20#D55, 21#D65, 22#D75, -1#otras
+
+[0102-9209]
+Label=Flash
+
+[0102-920A]
+Label=Longitud focal [mm]
+
+[0102-927C]
+Label=Nota del fabricante
+
+[0102-9286]
+Label=Comentario del usuario
+
+[0102-9290]
+Label=SubSecTime
+
+[0102-9291]
+Label=SubSecTime Original
+
+[0102-9292]
+Label=SubSecTime Digitalización
+
+[0102-A000]
+Label=Versión FlashPix
+
+[0102-A001]
+Label=Espacio de color
+
+[0102-A002]
+Label=Ancho según EXIF
+
+[0102-A003]
+Label=Alto según EXIF
+
+[0102-A005]
+Label=Offset de interoperabilidad
+
+[0102-A20B]
+Label=Intensidad del flash [bcps]
+
+[0102-A20C]
+Label=Spatial frequency response
+
+[0102-A20E]
+Label=Resolución de plano focal X [Pixeles/unidad]
+
+[0102-A20F]
+Label=Resolución de plano focal Y [Pixeles/unidad]
+
+[0102-A210]
+Label=Unidad de resolución del plano focal
+ValueList=1#pulgadas, 2#pulgadas, 3#cm, 4#mm, 5#um
+
+[0102-A214]
+Label=Posición del motivo
+
+[0102-A215]
+Label=Nivel de exposición
+
+[0102-A217]
+Label=Tipo de sensor
+ValueList=1#No definido, 2#one-chip color area sensor, 3#two-chip color area sensor, 4#three-chip color area, 5#color sequential area sensor, 6#sensor trilinear, 7#color sequential linear sensor
+
+[0102-A300]
+Label=Datos de origen
+
+[0102-A301]
+Label=Tipo de escena
+
+[0102-A302]
+Label=Patrón CFA
+
+[0102-A401]
+Label=Imagen
+ValueList=0#normal, 1#personalizada
+
+[0102-A402]
+Label=Modo de exposición
+ValueList=0#automático, 1#manual, 2#bracketing
+
+[0102-A403]
+Label=Balance de blancos
+ValueList=0#automático, 1#manual
+
+[0102-A404]
+Label=Zoom digital
+
+[0102-A405]
+Label=Longitud focal equivalente a 35mm [mm]
+
+[0102-A406]
+Label=Tipo de escena
+ValueList=0#estándar, 1#paisaje, 2#retrato, 3#nocturna
+
+[0102-A407]
+Label=Ganancia de señal
+ValueList=0#ninguna, 1#low gain up, 2#high gain up, 3#low gain down, 4#high gain down
+
+[0102-A408]
+Label=Nivel de contraste
+ValueList=0#normal, 1#suave, 2#duro
+
+[0102-A409]
+Label=Nivel de la saturación
+ValueList=0#normal, 1#bajo, 2#alto
+
+[0102-A40A]
+Label=Nivel de nitidez
+ValueList=0#normal, 1#bajo, 2#alto
+
+[0102-A40B]
+Label=Descripción de la configuración del dispositivo
+
+[0102-A40C]
+Label=Distancia al sujeto
+ValueList=0#desconocida, 1#macro, 2#primer plano, 3#infinita
+
+[0102-A420]
+Label=ID de la imagen
+ValueList=
+
+; --------------------- GPS IFD ---------------------
+
+[0103-0000]
+Label=Versión ID
+
+[0103-0001]
+Label=Latitud de referencia
+ValueList=N#Norte, S#Sur
+
+[0103-0002]
+Label=Grados de latitud
+
+[0103-0003]
+Label=Referencia de la latitud
+ValueList=O#Este, W#Oeste
+
+[0103-0004]
+Label=Grados de longitud
+
+[0103-0005]
+Label=Altura de referencia
+ValueRef=0#nivel del mar
+
+[0103-0006]
+Label=Altura
+
+[0103-0007]
+Label=Marca de tiempo
+
+[0103-0008]
+Label=Satélites
+
+[0103-0009]
+Label=Estado
+ValueList=A#medición en progreso, V#Measurement is Interoperability
+
+[0103-000A]
+ Label=Método de medición
+ValueList=2#bidimensional, 3#tridimensional
+
+[0103-000B]
+Label=DOP
+
+[0103-000C]
+Label=Referencia de velocidad
+
+[0103-000D]
+Label=Velocidad
+
+[0103-000E]
+Label=Referencia de dirección
+ValueList=M#polo norte magnético, T#polo norte geográfico
+
+[0103-000f]
+Label=Dirección
+
+[0103-0010]
+Label=Referencia de dirección de la imagen
+
+[0103-0011]
+Label=Dirección de la imagen
+
+[0103-0012]
+Label=Posición de medición
+
+[0103-0013]
+Label=Referencia de latitud de destino
+ValueList=N#Norte, S#Sur
+
+[0103-0014]
+Label=Latitud de destino
+
+[0103-0015]
+Label=Referencia de longitud de destino
+ValueList=E#Este W#Oeste
+
+[0103-0016]
+Label=Longitud de destino
+
+[0103-0017]
+Label=Referencia de dirección del destino
+ValueList=M#polo norte magnético, T#polo norte geográfico
+
+[0103-0018]
+Label=Dest Bearing
+ValueList=K#Kilometros, M#Millas, N#Millas marinas
+
+[0103-0019]
+Label=Distancia de referencia del destino
+
+[0103-001A]
+Label=Distancia al destino
+
+[0103-001B]
+Label=Método de proceso
+
+[0103-001C]
+Label=Información de area
+
+[0103-001D]
+Label=Fecha
+
+[0103-001E]
+Label=Desvío
+ValueList=0#sin corrección, 1#con corrección de desvío
+
+; --------------------- IOP IFD ---------------------
+
+[0104-0001]
+Label=Índice IOP
+
+[0104-0002]
+Label=Versión IOP
+
+[0104-1001]
+Label=Ancho IOP
+
+[0104-1002]
+Label=Alto IOP
+
+; --------------------- Makernote (Canon) ---------------------
+
+[A010-0001]
+Label=Ajustes de la cámara 1
+
+[A010-0004]
+Label=Ajustes de la cámara 2
+
+[A010-0006]
+Label=Información de la foto
+
+[A010-0007]
+Label=Firmware-Version
+
+[A010-0008]
+Label=Número de la foto
+
+[A010-0009]
+Label=Nombre del propietario
+
+[A010-000C]
+Label=Número de serie de la cámara
+
+; --------------------- Makernote (Canon) - Camera Settings 1 ---------------------
+
+[A011-0001]
+Label=Modo macro
+ValueList=1#macro, 2#normal
+
+[A011-0002]
+Label=Disparo automático
+ValueList=0#Off
+
+[A011-0003]
+Label=Calidad de imagen
+ValueList=2#normal, 3#fina, 5#superfina
+
+[A011-0004]
+Label=Sincronización del flash
+ValueList=0#desactivada, 1#automática, 2#activada, 3#reducción de ojos rojos, 4#sincronización lenta, 5#automática con reducción de ojos rojos, 6#activa con reducción de ojos rojos
+
+[A011-0005]
+Label=Modo de disparo
+ValueList=0#simple o disparador automático, 1#serie
+
+[A011-0007]
+Label=Modo de autoenfoque
+ValueList=0#prise active, 1#AI-Servo, 2#AI-Focus, 3#MF, 4#Único-AF, 5#Contínuo, 6#MF
+
+[A011-000A]
+Label=Resolución
+ValueList=0#alta, 1#media, 2#baja
+
+[A011-000B]
+Label=Modo de grabación
+ValueList=0#automática, 1#manual, 2#paisaje, 3#velocidad rápida, 4#velocidad lenta, 5#nocturna, 6#en blanco y negro, 7#sepia, 8#retrato, 9#deportes, 10#macro/cercanas, 11#panorámica
+
+[A011-000D]
+Label=Contraste
+ValueList=-1#bajo, 0#normal, 1#alto
+
+[A011-000E]
+Label=Saturación
+ValueList=-1#bajo, 0#normal, 1#alto
+
+[A011-000F]
+Label=Nivel de nitidez
+ValueList=-1#bajo, 0#normal, 1#alto
+
+[A011-0010]
+Label=sensibilidad (ISO)
+ValueList=15#automática, 16#50, 17#100, 18#200, 19#400
+
+[A011-0011]
+Label=Exposición
+ValueList=3#evaluativa, 4#parcial, 5#central
+
+[A011-0012]
+Label=Control de enfoque
+ValueList=0#manual, 1#automático, 3#macro, 7#infinito, 8#Fest (panorámico)
+
+[A011-0013]
+Label=Punto de medición AF
+ValueList=12288#ninguno (MF), 12289#elección automática, 12290#a derecha, 12291#al centro, 12292#a izquierda
+
+[A011-0014]
+Label=Programa de exposición
+ValueList=0#facil, 1#programado, 2#prioridad velocidad, 3#prioridad abertura, 4#manual, 5#A-DEP
+
+[A011-0017]
+Label=Longitud focal [mm]
+
+[A011-0018]
+Label=Distancia focal corta [mm]
+
+[A011-0019]
+Label=Unidad de longitud focal
+
+; --------------------- Makernote (Canon) - Camera Settings 2 ---------------------
+
+[A012-0007]
+Label=Balance de blanco
+ValueList=0#automático, 1#diurna, 2#nublado, 3#tungsteno, 4#fluorescente, 5#flash, 6#personalizado
+
+[A012-0009]
+Label=Número de imagen
+
+; --------------------- Makernote (Nikon) ---------------------
+
+[A020-0003]
+Label=Calidad de la imagen
+ValueList=1#VGA básica, 2#VGA normal, 3#VGA fina, 4#SXGA básica, 5#SXGA normal, 6#SXGA fina, 10#UXGA básica, 11#UXGA normal, 12#UXGA fina
+
+[A020-0004]
+Label=Modo de color
+ValueList=1#color, 2#monocromático
+
+[A020-0005]
+Label=Ajuste de imagen
+ValueList=0#normal, 1#brillo(+), 2#brillo(-), 3#contraste(+), 4#contraste(-)
+
+[A020-0006]
+Label=Sensibilidad del CCD
+ValueList=0#ISO 80, 2#ISO 160, 4#ISO 320, 5#ISO 100
+
+[A020-0007]
+Label=Balance de blancos
+ValueList=0#automático, 2#por defecto, 4#diurna, 5#fluorescentes, 6#nublado, 7#flash
+
+[A020-0008]
+Label=Foco
+
+[A020-000A]
+Label=Zoom digital
+
+[A020-000B]
+Label=Lente adaptado
+ValueList=0#ninguna, 2#ojo de pez
+
+; --------------------- Makernote (Nikon) ---------------------
+
+[A030-0001]
+Label=Versión de los datos
+
+[A030-0002]
+Label=Sensibilidad (ISO)
+
+[A030-0003]
+Label=Modo de color
+
+[A030-0004]
+Label=Calidad de imagen
+
+[A030-0005]
+Label=Balance de blancos
+
+[A030-0006]
+Label=Ajuste de enfoque
+
+[A030-0007]
+Label=Modo de enfoque
+
+[A030-0008]
+Label=Ajuste de flash
+
+[A030-000B]
+Label=Ajuste de balance de blancos
+
+[A030-000F]
+Label=Ajuste ISO
+
+[A030-0013]
+Label=Sensibilidad (ISO)
+
+[A030-0016]
+Label=Área de imagen
+
+[A030-0080]
+Label=Orientación de la imagen
+
+[A030-0081]
+Label=Balance de color
+
+[A030-0082]
+Label=Adaptador de lente
+
+[A030-0083]
+Label=Tipo de lente
+
+[A030-0084]
+Label=Objetivo
+
+[A030-0085]
+Label=Distancia focal
+
+[A030-0086]
+Label=Zoom digital
+
+[A030-0087]
+Label=Modo de flash
+ValueList=0#sin flash, 8#con flash, modo comando, 9#con flash, modo TTL
+
+[A030-0088]
+Label=Punto de enfoque
+
+[A030-008D]
+Label=Matiz
+
+[A030-008F]
+Label=Modo de escena
+
+[A030-0090]
+Label=Fuente de luz
+
+[A030-0092]
+Label=Ajuste del color
+
+[A030-0094]
+Label=Saturación
+
+[A030-0095]
+Label=Reducción de ruido
+
+[A030-00A0]
+Label=Número de serie
+
+[A030-00A7]
+Label=Contador de disparos
+
+[A030-00A9]
+Label=Mejora de imagen
+
+[A030-00AA]
+Label=Nivel de saturación
+
+[A030-00AB]
+Label=Vari Programa
+
+; --------------------- Makernote (Casio) ---------------------
+
+[A040-0001]
+Label=Modo de grabación
+ValueList=1#obturateur unique, 2#panorama, 3#nocturna, 4#retrato, 5#paisaje
+
+[A040-0002]
+Label=Calidad de la imagen
+ValueList = 1#económica, 2#normal, 3#fina
+
+[A040-0003]
+Label=Control de enfoque
+ValueList=2#macro, 3#automático, 4#manual, 5#infinito
+
+[A040-0004]
+Label=Modo del flash
+ValueList=1#automático, 2#activado, 3#desactivado, 4#reducción de ojos rojos
+
+[A040-0005]
+Label=Intensidad del flash
+ValueList=1#automático, 2#activado, 3#desactivado, 4#reducción de ojos rojos, 11#baja, 13#normal, 15#alta
+
+[A040-0006]
+Label=Distancia al objeto
+
+[A040-0007]
+Label=Balance de blanco
+ValueList=1#automático, 2#tungsteno, 3#diurno, 4#fluorescente, 5#sombras, 129#manual
+
+[A040-000A]
+Label=Zoom digital
+ValueList=65536#desactivado, 65537#zoom digital 2x
+
+[A040-000B]
+Label=Nivel de nitidez
+ValueList=0#normal, 1#bajo 2#alto
+
+[A040-000C]
+Label=Nivel de contraste
+ValueList=0#normal, 1#bajo, 2#alto
+
+[A040-000D]
+Label=Nivel de saturación
+ValueList=0#normal, 1#bajo, 2#alto
+
+[A040-0014]
+Label=Sensibilidad del CCD
+ValueList=64#normal, 125#+1.0, 250#+2.0, 244#+31.0, 80#normal, 100#alta
+
+; --------------------- Makernote (Casio) ---------------------
+
+[A050-0002]
+Label=Resolución de imagen miniatura
+
+[A050-0003]
+Label=Tamaño de imagen miniatura
+
+[A050-0004]
+Label=Offset de imagen miniatura
+
+[A050-0008]
+Label=Calidad de la imagen
+ValueList=0#económica, 1#normal, 2#fina
+
+[A050-0009]
+Label=Tamaño de la imagen
+ValueList=0#640x480, 4#1600x1200, 5#2048x1536, 20#2288x1712, 21#2592x1944, 22#2304x1728, 36#3008x2008
+
+[A050-000D]
+Label=Control de enfoque
+ValueList=0#normal, 1#macro
+
+[A050-0014]
+Label=Sensibilidad (ISO)
+ValueList=3#50, 4#64, 6#100, 9#200
+
+[A050-0019]
+Label=Balance de blancos
+ValueList=0#automático, 1#diurno, 2#sombras, 3#tungsteno, 4#fluorescente, 5#manual
+
+[A050-001D]
+Label=Longitud focal
+
+[A050-001F]
+Label=Nivel de la saturación
+ValueList=0#-1, 1#normal, 2#+1
+
+[A050-0020]
+Label=Nivel del contraste
+ValueList=0#-1, 1#normal, 2#+1
+
+[A050-0021]
+Label=Nivel de la nitidez
+ValueList=0#-1, 1#normal, 2#+1
+
+[A050-0e00]
+Label=Print Image Matching Info
+
+[A050-2011]
+Label=Ajuste del balance de blancos
+
+[A050-2012]
+Label=Balance de blancos
+ValueList=12#flash, 0#manual, 1#automático?, 4#flash?
+
+[A050-2022]
+Label=Distancia del objeto [mm]
+
+[A050-2034]
+Label=Alcance del flash
+
+[A050-3000]
+Label=Modo de grabación
+ValueList=2#normal
+
+[A050-3001]
+Label=Disparador automático
+ValueList=1#desactivado
+
+[A050-3002]
+Label=Calidad
+ValueList=1#económica, 2#normal, 3#fina
+
+[A050-3003]
+Label=Control de enfoque
+ValueList=0#manual?, 1#fijación?, 3#zona única AF, 4#zonas múltiples AF
+
+[A050-3006]
+Label=Huso horario
+
+[A050-3007]
+Label=Modo BestShot
+ValueList=0#activo, 1#desactivado
+
+[A050-3014]
+Label=Sensibilidad del CCD
+
+[A050-3015]
+Label=Modo de color
+ValueList=0#desactivado
+
+[A050-3016]
+Label=Mejorado
+ValueList=0#desactivado
+
+[A050-3017]
+Label=Filtro
+ValueList=0#desactivado
+
+; --------------------- Makernote (Fuji) ---------------------
+
+[A060-0000]
+Label=Versión de la nota del fabricante
+
+[A060-1000]
+Label=Configuración de calidad
+
+[A060-1001]
+Label=Nivel de la nitidez
+ValueList=1#suave, 2#suave, 3#normal, 4#fuerte, 5#fuerte
+
+[A060-1002]
+Label=Balance de blancos
+ValueList=0#automático, 256#diurna, 512#nublado, 768#luz de día-fluorescente, 769#DaywhiteColour-fluorescence, 770#White-fluorescence, 1024#incandescente, 3840#manual
+
+[A060-1003]
+Label=Nivel de la saturación
+ValueList=0#normal, 256#alto, 512#bajo
+
+[A060-1004]
+Label=Nivel de contraste
+ValueList=0#normal, 256#alto, 512#bajo
+
+[A060-1010]
+Label=Modo del flash
+ValueList=0#automático, 1#activo, 2#desactivado, 3#reducción de ojos rojos
+
+[A060-1011]
+Label=Intensidad del flash
+
+[A060-1020]
+Label=Modo macro
+ValueList=0#activo, 1#desactivado
+
+[A060-1021]
+Label=Control de enfoque
+ValueList=0#automático, 1#manual
+
+[A060-1030]
+Label=Modo de sincronización lenta
+ValueList=0#desactivado, 1#activo
+
+[A060-1031]
+Label=Modo de imagen
+ValueList=0#automático, 1#retrato, 2#paisaje, 4#deportes, 5#nocturna, 6#programado, 256#prioridad de velocidad, 512#prioridad de abertura, 768#manual
+
+[A060-1100]
+Label=Modo de secuencias/bracketing
+ValueList=0#desactivado 1#activo
+
+[A060-1300]
+Label=Advertencia de movimiento
+ValueList=0#ok, 1#advertencia de movimiento
+
+[A060-1301]
+Label=Advertencia de enfoque
+ValueList=0#ok, 1#desenfocado
+
+[A060-1302]
+Label=Estado de exposición
+ValueList=0#ok, 1#saturado
+
+; --------------------- Makernote (Olympus) ---------------------
+
+[A070-0200]
+Label=Modo de grabación
+
+[A070-0201]
+Label=Compresión
+ValueList=0#SQ, 1#HQ, 2#SHQ
+
+[A070-0202]
+Label=Modo makro
+ValueList=0#normal, 1#makro
+
+[A070-0204]
+Label=Zoom digital
+
+[A070-0207]
+Label=Versión del Firmware
+
+[A070-0208]
+Label=Información de la imagen
+
+[A070-0209]
+Label=ID de la cámara
+
+; --------------------- Makernote (Sigma) ---------------------
+
+[A080-0002]
+Label=Número de serie
+
+[A080-0003]
+Label=Mode Prise en continu
+
+[A080-0004]
+Label=Resolución
+
+[A080-0005]
+Label=Modo de autoenfoque
+
+[A080-0006]
+Label=Nivel de nitidez
+
+[A080-0007]
+Label=Balance de blancos
+
+[A080-0008]
+Label=Programa de exposición
+
+[A080-0009]
+Label=Exposición
+
+[A080-000A]
+Label=Objetivo
+
+[A080-000B]
+Label=Espacio de color
+
+[A080-000C]
+Label=Compensación de la exposición
+
+[A080-000D]
+Label=Contraste
+
+[A080-000E]
+Label=Sombra
+
+[A080-000F]
+Label=Claridad
+
+[A080-0010]
+Label=Nivel de saturación
+
+[A080-0011]
+Label=Nivel de nitidez
+
+[A080-0012]
+Label=X3 luz de relleno
+
+[A080-0014]
+Label=Corrección del color
+
+[A080-0015]
+Label=Modo de ajuste
+
+[A080-0016]
+Label=Calidad
+
+[A080-0017]
+Label=Firmware-Modus
+
+[A080-0018]
+Label=Software
+
+[A080-0019]
+Label=Auto bracket
+
+; --------------------- Makernote (Sanyo) ---------------------
+
+[A090-00ff]
+Label=Maker Note Offset
+
+[A090-0100]
+Label=Vista en miniatura
+
+[A090-0200]
+Label=Modo especial
+
+[A090-0201]
+Label=Calidad
+ValueList=0#normal/muy baja, 1#normal/baja, 2#normal/media baja, 3#normal/media, 4#normal/media alta, 5#normal/alta, 6#normal/muy alta, 7#normal/super alta, 256#fina/muy baja, 257#fina/baja, 258#fina/media baja, 259#fina/media, 260#fina/media alta, 261#fina/alta, 262#fina/muy alta, 263#fina/super alta, 512#muy fina/muy baja, 513#muy fina/baja, 514#muy fina/media baja, 515#muy fina/media, 516#muy fina/media alta, 517#muy fina/alta, 518#muy fina/muy alta, 519#muy fina/super alta
+
+[A090-0202]
+Label=Macro
+ValueList=0#normal, 1#makro, 2#vista, 3#manual
+
+[A090-0204]
+Label=Zoom digital
+
+[A090-0207]
+Label=Versión del software
+
+[A090-0208]
+Label=Información de la imagen
+
+[A090-0209]
+Label=ID de la cámara
+
+[A090-020E]
+Label=Disparo secuencial
+ValueList=0#ninguno, 1#estándar, 2#mejor, 3#ajuste de exposición
+
+[A090-020F]
+Label=Wide range
+ValueList=0#desactivado, 1#activo
+
+[A090-0210]
+Label=Modo de ajuste de color
+ValueList=0#desactivado, 1#activo
+
+[A090-0213]
+Label=QuickShot
+ValueList=0#desactivado, 1#activo
+
+[A090-0214]
+Label=Disparo automático
+ValueList=0#desactivado, 1#activo
+
+[A090-0216]
+Label=Notas de voz
+ValueList=0#desactivado, 1#activo
+
+[A090-0217]
+Label=Record Shutter Release
+ValueList=0#Record while down, 1#Press start, press stop
+
+[A090-0218]
+Label=Flicker Reduce
+ValueList=0#desactivado, 1#activo
+
+[A090-0219]
+Label=Zoom óptico
+ValueList=0#desactivado, 1#activo
+
+[A090-021B]
+Label=Xoom digital
+ValueList=0#desactivado, 1#activo
+
+[A090-021D]
+Label=Light Source Special
+ValueList=0#desactivado, 1#activo
+
+[A090-021E]
+Label=Resaved
+ValueList=0#no, 1#sí
+
+[A090-021F]
+Label=Modo de escena
+ValueList=0#apagado, 1#deporte, 2#TV, 3#nocturna, 4#personalizado 1, 5#personalizado 2
+
+[A090-0223]
+Label=Enfoque manual
+
+[A090-0224]
+Label=Intervalo de ráfaga
+ValueList=0#5 imágenes/s, 1#10 imágenes/s, 2#15 imágnes/s, 3#20 imágenes/s
+
+[A090-0225]
+Label=Modo del flash
+ValueList=0#automático, 1#activo, 2#desactivado, 3#reducción de ojos rojos
+
+; --------------------- Makernote (Minolta) ---------------------
+
+[A0A0-0000]
+Label=Versión
+
+[A0A0-0040]
+Label=Imagen comprimida
+
+[A0A0-0081]
+Label=Previsualizar información de la imagen
+
+[A0A0-0088]
+Label=Comienzo de previsualización de imagen
+
+[A0A0-0089]
+Label=Largo de previsualización de imagen
+
+[A0A0-0101]
+Label=Modo de color
+ValueList=0#colores naturales, 1#blanco y negro, 2#colores fuertes, 3#solarización, 4#Adobe RGB
+
+[A0A0-0102]
+Label=Minolta-Calidad
+ValueList=0#raw, 1#superfina, 2#fina, 3#estándar, 4#económica, 5#extra fina
+
+[A0A0-0103]
+Label=Minolta-Calidad
+ValueList=0#raw, 1#superfina, 2#fina, 3#estándar, 4#económica, 5#extra fina
+
+; --------------------- Makernote (Minolta) ---------------------
+
+[A0B0-0001]
+Label=Programa de exposición
+ValueList=0#programado, 1#prioridad de velocidad, 2#prioridad de abertura, 3#manual
+
+[A0B0-0002]
+Label=Modo del flash
+ValueList=0#flash de relleno, 1#reducción de ojos rojos, 2#sincronización de cortinilla trasera, 3#sans fil
+
+[A0B0-0003]
+Label=Balance de blancos
+ValueList=0#automático, 1#soleado, 2#nublado, 3#incandescente, 5#personalizado 1, 7#fluorescente 1, 8#fluorescente 2, 11#personalizado 2, 12#personalizado 3
+
+[A0B0-0004]
+Label=Tamaño de la imagen
+ValueList=0#2560x1920 (2048x1536), 1#1600x1200, 2#1280x960, 3#640x480
+
+[A0B0-0005]
+Label=Calidad de la imagen
+
+[A0B0-0006]
+Label=Mode Prise en continu
+ValueList=0#Unique, 1#Continue, 2#Par temporisateur, 4#Crochets, 5#Intervalle, 6#Continue UHS, 7#Continu HS
+
+[A0B0-0007]
+Label=Evaluación de la exposición
+ValueList=0#evaluativa, 1#central, 2#puntual
+
+[A0B0-0008]
+Label=Sensibilidad (ISO)
+
+[A0B0-0009]
+Label=Tiempo de exposición
+
+[A0B0-000A]
+Label=Valor de abertura
+
+[A0B0-000B]
+Label=Modo macro
+ValueList=0#desactivado, 1#activo
+
+[A0B0-000C]
+Label=Zoom digital
+ValueList=0#desactivado, 1#activo, 2#2x
+
+[A0B0-000D]
+Label=Compensación de la exposición
+
+[A0B0-000E]
+Label=Incremento en la serie de exposición
+ValueList=0#1/3 EV, 1#2/3 EV, 2#1 EV
+
+[A0B0-000F]
+Label=Intervalo de tiempo
+
+[A0B0-0011]
+Label=Intervalos-Cantidad
+
+[A0B0-0012]
+Label=Longitud focal [mm]
+
+[A0B0-0013]
+Label=Distancia focal
+
+[A0B0-0014]
+Label=Flash
+ValueList=0#no, 1#sí
+
+[A0B0-0015]
+Label=Fecha
+
+[A0B0-0016]
+Label=Hora
+
+[A0B0-0017]
+Label=Máxima abertura
+
+[A0B0-001A]
+Label=Memoria del número de archivo
+ValueList=0#desactivado, 1#activo
+
+[A0B0-001B]
+Label=Número del último archivo
+
+[A0B0-001C]
+Label=Equilibrio del color rojo
+
+[A0B0-001D]
+Label=Equilibrio del color verde
+
+[A0B0-001E]
+Label=Equilibrio del color azul
+
+[A0B0-001F]
+Label=Nivel de saturación
+
+[A0B0-0020]
+Label=Nivel de contraste
+
+[A0B0-0021]
+Label=Nivel de la nitidez
+ValueList=0#fuerte, 1#normal, 2#suave
+
+[A0B0-0022]
+Label=Modo de escena
+ValueList=0#apagado, 1#retrato, 2#texto, 3#nocturna, 4#diurna, 5#deportes
+
+[A0B0-0023]
+Label=Compensación del flash
+
+[A0B0-0024]
+Label=Sensibilidad (ISO)
+ValueList=0#100, 1#200, 2#400, 3#800, 4#automática
+
+[A0B0-0025]
+Label=Modelo de la cámara
+ValueList=0#DiMAGE 7, 1#DiMAGE 5, 2#DiMAGE S304, 3#DiMAGE S404, 4#DiMAGE 7i, 5#DiMAGE 7Hi
+
+[A0B0-0026]
+Label=Modo a intervalos
+ValueList=0#imagen quieta, 1#película a lapsos de tiempo
+
+[A0B0-0027]
+Label=Nombre de carpeta
+ValueList=0#Standard Form, 1#Data form
+
+[A0B0-0028]
+Label=Modo de color
+
+[A0B0-0029]
+Label=Filtro de color
+
+[A0B0-002A]
+Label=Filtro de blanco y negro
+
+[A0B0-002B]
+Label=Flash integrado
+ValueList=0#no disparó, 1#disparado
+
+[A0B0-002C]
+Label=Brillo
+
+[A0B0-002D]
+Label=Spot-Punto de enfoque X
+
+[A0B0-002E]
+Label=Spot-Punto de enfoque Y
+
+[A0B0-002F]
+Label=Zona de enfoque ancha
+ValueList=0#sin zona, 1#zona media (horizontal), 2#zona media (vertical), 3#zona izquierda, 4#zona derecha
+
+[A0B0-0030]
+Label=Control de enfoque
+ValueList=0#AF, 1#MF
+
+[A0B0-0031]
+Label=Distancia de enfoque
+ValueList=0#enfoque amplio (normal), 1#enfoque puntual
+
+[A0B0-0032]
+Label=DECPosition
+ValueList=0#exposición, 1#contraste, 2#saturación, 3#filtro
+
+; --------------------- External words ---------------------
+
+[E000-0000]
+Label=
+ValueList=0#no calibrado, 1#RGB sin compresión
+
+[E000-0001]
+Label=
+ValueList=2#directamente de la imagen fotografiada
+
+[E000-0002]
+Label=
+ValueList=3#pulgadas, 4#centímetros
+
+[E000-0003]
+Label=
+ValueList=5#apagado, 6#encendido, 7#no se detecto la luz de retorno del flash, 8#se detecto la luz de retorno del flash
+
+
