@@ -1,0 +1,283 @@
+NetworkMiner 1.6.1	2014-06-24
+	* ReceivePcapOverTcpForm.cs: Removed call to Application.DoEvents() to make
+	PCAP-over-IP feature more reliable.
+
+	* NetworkMinerForm.cs: Removed calls to Application.DoEvents().
+
+NetworkMiner 1.6	2014-06-16
+
+	* DnsPacket.cs: Added error handling of recursive DNS Name Labels that
+	contains a forever-loop pointer. Thanks to Dan Eriksson (of FM CERT fame)
+	for notifying us about this bug!
+
+	* NetworkMinerForm.cs: Removed sniffing capability from GUI when running
+	NetworkMiner under Mono (in Linux for example). Users should instead use the
+	PCAP-over-IP feature to perform live sniffing in Linux, OSX etc.
+
+	* NetworkMienrForm.cs: Files and images can now be drag-and-dropped to any
+	desired application or location directly from the "Files" and "Images" tabs
+	in the GUI.
+
+	* SmtpPacketHandler.cs: Improved extraction of SMTP e-mails and attachments
+
+	* Rfc2047Parser.cs: Added simple parser for RFC 2047 encoding in order to
+	properly parse strings in SMTP headers, such as subject lines and attachment
+	filenames.
+
+	* PcapFileWriter.cs: Increased file buffer size to 8MB for improved performance
+
+	* PacketHandler.cs: Increase packet queue size to 16000 packets for live
+	sniffing
+
+	* NetworkHost.cs: Fixed OS fingerprinting mixup where Apple iOS was
+	confused with Cisco IOS.
+
+	* DnsPacket.cs: Added DNS response error messages like NXDOMAIN and
+	SERVFAIL to DNS tab. Thanks to Lenny Hansson for the idea!
+
+	* PcapOverIP: Moved PCAP-over-IP implementation from the Professional
+	edition of NetworkMiner into the Free Open Source version.
+
+	* PcapStreamReader.cs: Improved performance of backgroundStreamReader by
+	making sleep durations adaptive. This has significant impact on computers
+	and VM's with limited CPU resources.
+
+NetworkMiner 1.5	2013-09-10	Erik Hjelmvik
+
+	* ErfFrame.cs: Added support to parse pcap files containing Extensible
+	Record Format (ERF) frames.
+
+	* PointToPointOverEthernetPacket.cs: Added PPPoE protocol parser.
+
+	* PointToPointPacket.cs: Improved PPP parser to support non-HDLC type PPP
+	packets. Example: "AOLTraffic_00000_20071029163901.pcap" from pcapr.net
+
+	* NetworkMinerForm.cs: Added feature to load keywords from text file.
+	
+	* FileStreamAssembler.cs: Fixed directory traversal vulnerability. Thanks
+	to Alyssa Milburn for discovering and notifying us regarding this vulnerability!
+
+	* FileStreamAssembler.cs: Improved exception handling, especially for SMTP
+	Thanks to Jonas Lejon for supplying captured packets that triggered the
+	exception!
+
+	* NetworkWrapper.Utils.Security.cs: Added detection of DLL Injection.
+	Thanks to Ucha Gobejishvili for reporting this vulnerability!
+
+	* NetworkMinerForm.cs: Fixed NullReferenceException when masking credentials
+	with null values. Thanks to Claus Valca for finding this bug.
+
+	* UdpPortProtocolFinder.cs: Added parsing of LLMNR DNS queries over UDP 5355
+
+NetworkMiner 1.4.1	2012-08-29	Erik Hjelmvik
+	
+	* PacketHandler.cs: Now allowing large "virtual" frames for reassembled
+	TCP streams.
+
+	* IEC-104_PacketHandler.cs: Fixed confusion about what TCP endpoint a command
+	is sent from when server and client have the same IP.
+
+NetworkMiner 1.4	2012-08-12	Erik Hjelmvik
+
+	* DhcpPacketHandler.cs: DHCP option data is now extracted to the parameters
+	tab. Thanks to Paul Cockayne for the idea.
+
+	* IPv4Packet.cs: Fragmented IPv4 packets are now properly reassembled to
+	full IP packets with payload.
+
+	* IEC_60870-5-104Packet.cs: Implemented the SCADA protocol IEC 60870-5-104.
+	Thanks to Aivar Liimets from Martem for his great support on this one!
+
+	* PacketHandler.cs: Added proper timestamps to detected anomaly events and
+	improved ARP poisoning reporting to anomalies tab.
+
+	* NetworkMinerForm.cs: Verification of file extention is completely removed.
+	Files with any extention can now be loaded, as long as they are valid
+	libpcap files.
+
+	* NetworkMinerForm.cs: Added "Clear GUI" button to Tools menu.
+
+	* NetworkMinerForm.cs: Added option to show/hide cookies, NTLM challenge-
+	responses as well as the ability to mask passwords in credentials tab.
+	
+NetworkMiner 1.3	2012-04-12	Erik Hjelmvik
+
+	* NullLoopbackPacket.cs: Added support for the Null / Loopback link layer
+	packets used when sniffing localhost on BSD operating systems.
+
+	* NetworkTcpSession.cs: Modified getter for FinPacketReceived to solve the
+	bug found by TCB13.
+
+	* HttpPacket.cs: Added extraction of usernames from Digest Authorization
+	such as those found in web_recon.pcap in:
+	http://uscc.cyberquests.org/february2012.php
+
+	* HttpPacketHandler.cs: Added HTTP headers to Parameters tab.
+
+	* HttpPacketHandler.cs: Added HTTP X headers, such as x-up-calling-line-id
+	and HTTP_X_UP_CALLING_LINE_ID, to host details under ExtraDetails.
+
+	* NetworkMinerForm.cs: Added support to load .raw files as pcap files, such
+	as those generated from Sguil. Thanks to Doug Burks for the idea!
+
+	* NetworkMinerForm.cs: Disabled nag-dialogue-box about WinPcap not being
+	installed on startup since NetworkMiner is primarily designed to be a pcap
+	parser rather than a sniffer.
+
+	* StringManglerUtil.cs: Added support to handle null strings in
+	GetExtension function.
+
+	* MultiPart.cs: Added exception handler to ReadHeaderAttributes function
+	to avoid exceptions from negative length Substring calls.
+
+	* NetworkMinerForm.cs: Added the option of selecting a different cleartext
+	database file in the "Cleartext" tab. This feature can be used in order to
+	for example look for text in a specific language.
+	
+	* IPv4Packet.cs: Error handling of IP packets with fragment offset > 0.
+	Thanks to Aivar Liimets for finding this bug.
+
+NetworkMiner 1.2	2011-11-19	Erik Hjelmvik
+
+	* Updated directory separators to be platform independent. This means that
+	NetworkMiner can now be run on Linux, Mac etc. with Mono:
+	http://www.mono-project.com/
+	
+	* PcapStreamReader.cs: Updated exception handling to cope more nicely with
+	end-of-stream issues, such as PCAP files cut in the middle of a frame.
+	Thanks to James Lay for identifying this bug.
+
+	* SmtpPacketHandler.cs: Added exception handler to fileData.AddRange() call
+
+	* PartBuilder.cs: Added support for extracting data from non-multipart data
+
+	* HttpPacketHandler.cs: Added support for extracting emails from AOL webmail
+	as in here: http://forensicscontest.com/2011/10/11/puzzle-10-the-l33t-pill
+
+	* GrePacket.cs: Added GRE protocol implementation.
+
+	* PacketHandler.cs: Added code to extract messages from unencrypted
+	SquirrelMail webmail, comments on Wordpress and comments on Blogspot.
+
+	* NetworkCredential.cs: Unencrypted login credentials to SquirrelMail
+	webmail are now extracted to the credentials tab.
+
+	* HttpPacketHandler.cs: Updated "Details" column in "Files" tab to display
+	[http.host][http.request.uri] insted of just [http.request.uri].
+
+NetworkMiner 1.1	2011-09-15	Erik Hjelmvik
+
+	* NetworkMinerForm.cs: Fixed so that one or multiple pcap files can be
+	loaded on startup by drag-n-droping them onto NetworkMiner.exe. Same thing
+	goes for when providing pcap files as command line arguments.
+
+	* PacketHandler.cs:
+		- Fixed concurrency issues by locking the correct queue object. Thanks to
+		  psteier for being first to find and solve this bug!
+		- Added new PacketHandler for NetBiosSessionService
+
+	* PointToPointPacket.cs: Added support for PPP frames in pcap files, such
+	as this one: http://www.pcapr.net/view/tyson.key/2009/8/2/13/Social_Networks_and_RSS_00005_20090929212859.html
+
+	* SmbCommandPacketHander.cs: Added FileID to assembler's ExtendedFileId in
+	order to support multiple simultaneous SMB file transfers over the same TCP
+	session. Thanks to I S for reporting this bug!
+
+	* NetBiosSessionService.cs: Implemented interface ISessionPacket and added
+	support for the NetBios Session Service session keep-alive message
+
+	* WinPCapNative.cs: Changed CallingConvention to Cdecl
+
+	* PcapFileReader.cs: Added a more generic base class "PcapStreamReader" that
+	PcapFileReader extends to parse a FileStream rather than an IO-stream.
+
+	* HttpPacketHandler.cs: Added support to extract data submitted to Google
+	Analytics into "Host Details". This includes attributes like:
+	 - Screen resolution
+	 - Color depth
+	 - Browser language
+	 - Flash version
+
+
+NetworkMiner 1.0	2011-02-05	Erik Hjelmvik
+
+	* FileStreamAssembler.cs: Implemented support to avoid reserved file and folder
+	names such as COM2, LPT1 and CON for files extracted to disk.
+
+	* SmtpPacket.cs: Extended the protocol parser to handle multiple requests and
+	responses in a single SMTP packet.
+	
+	* TlsRecordPacketHandler.cs: Improved parsing of SSL/TLS traffic to use the
+	underlying TCP stream properly in order to handle TLS record breakes on
+	non-even TCP packet boundaries.
+
+	* TcpPortProtocolFinder.cs: Added more default TCP service ports: 8021=FTP,
+	5223+8170+8443+9001+9030=SSL
+
+	* Converted Visual Studio project to Visual C# 2010 format, .NET framework
+	is still let back in 2.0 so that NetworkMiner will be able to run on as
+	many machines as possible.
+
+	* Improved TCP reassembly to support out-of-order TCP segments that are
+	paritally overlapping.
+
+	* NetworkTcpSession.cs: Modiefied FinPacketReceived to require a FIN in each
+	direction in order for the session to be closed.
+	
+	* FtpPacketHandler.cs: File sizes are extracted from the FTP control session
+	and stored to the file stream assembler object for better file size precision.
+
+	* PacketFactory.cs: Added support for Per-Packet Information header
+	(WTAP_ENCAP_PPI) as used by Kismet and sometimes Wireshark WiFi sniffing.
+
+	* PacketHandler.cs: Added extraction of Facebook as well as Twitter messages
+	into the message tab. Added support to extract emails sent with Microsoft
+	Hotmail (I.e. Windows Live) into Messages tab.
+
+	* NetworkCredential.cs:
+		- Added extraction of twitter passwords from when settings are changed.
+		Facebook user account names are also extracted (but not Facebook
+		passwords).
+		- Added extraction of gmailchat parameter from cookies in order to
+		identify users through their Google account logins.
+
+	* MacCollection.cs: Fixed bug with incorrect NIC vendor extraction. Also
+	added support for the original IEEE OUI file format as used in:
+	http://standards.ieee.org/regauth/oui/oui.txt
+
+	* SyslogPacket.cs: Added protocol parser for Syslog. Syslog messages are
+	displayed on the Parameter tab.
+
+NetworkMiner 0.92	2010-05-27	Erik Hjelmvik
+
+	* ChangeLog: Added this ChangeLog file to the project. I also added some info
+	about the previous two releases.
+	
+	* NetworkMinerForm.cs: Added Extension column to files list
+	
+	* NetworkCredential.cs: Added support to extract login credentials from the
+	AfterLogic AJAX based webmail service.
+	
+	* NetworkTcpSession.cs: Improved server detection when the TCP 3-way
+	handshake is missing in a TCP session by looking at TCP port numbers for known
+	protocols.
+
+
+NetworkMiner 0.91	2009-11-22	Erik Hjelmvik
+
+	* SmtpPacketHandler.cs: Fixed bug where full TCP content length was returned
+	instead of 0 when other protocols than SMTP were parsed. This caused
+	NetworkMiner to fail when reassembling layer 7 protocol headers that were
+	segmented in multiple TCP packets.
+
+	* PacketHandler.cs: Added ability to extract messages from web-based e-mail
+	and chat services, such as Gmail, Gmail chat, Yahoo e-mail, MS Exchange webmail
+
+
+NetworkMiner 0.90	2009-11-09	Erik Hjelmvik
+
+	* SmtpPacket.cs: Added SMTP parser. The main reason was to compete in the
+	Network Forensics Puzzle Contest at http://forensicscontest.com/
+	
+	* NetworkMinerForm.cs: Added the "Messages" tab in the GUI. Emails and chat
+	messages are displayed on this tab.
