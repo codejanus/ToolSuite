@@ -1,0 +1,26 @@
+4/10/2015 5:50:47 AM - Application starting
+4/10/2015 5:50:47 AM - Windir: C:\Windows
+4/10/2015 5:50:47 AM - Aircrack-ng GUI v1.0.0.6
+4/10/2015 5:50:50 AM - Application closing
+2015-09-10 오전 11:20:19 - Application starting
+2015-09-10 오전 11:20:19 - Windir: C:\WINDOWS
+2015-09-10 오전 11:20:19 - Aircrack-ng GUI v1.0.0.6
+2015-09-10 오전 11:22:15 - Application starting
+2015-09-10 오전 11:22:15 - Windir: C:\WINDOWS
+2015-09-10 오전 11:22:15 - Aircrack-ng GUI v1.0.0.6
+2015-09-10 오전 11:26:48 - Launch command: "C:\ToolSuite\Aircrack-ng\aircrack-ng.exe" -a 1 -n 128 -s C:\codedragon\wireless01.pcap
+2015-09-10 오후 1:39:34 - Launch command: "C:\ToolSuite\Aircrack-ng\aircrack-ng.exe" -a 1 -n 128 -s C:\codedragon\wireless01.pcap
+2015-09-10 오후 1:39:46 - Launch command: "C:\ToolSuite\Aircrack-ng\aircrack-ng.exe" -a 1 -n 128 -s C:\codedragon\wireless01.pcap
+2015-09-10 오후 1:40:05 - Launch command: "C:\ToolSuite\Aircrack-ng\aircrack-ng.exe" -a 1 -n 128 -s C:\codedragon\wireless01.pcap
+2015-09-10 오후 1:40:14 - Launch command: "C:\ToolSuite\Aircrack-ng\aircrack-ng.exe" -a 1 -n 128 -s C:\codedragon\wireless01.pcap
+2015-09-10 오후 1:40:20 - Launch command: "C:\ToolSuite\Aircrack-ng\aircrack-ng.exe" -a 1 -n 128 -s C:\codedragon\wireless01.pcap
+2015-09-10 오후 1:40:27 - Launch command: "C:\ToolSuite\Aircrack-ng\aircrack-ng.exe" -a 1 -n 128 -s C:\codedragon\wireless01.pcap
+2015-09-10 오후 1:40:33 - Launch command: "C:\ToolSuite\Aircrack-ng\aircrack-ng.exe" -a 1 -n 128 -s C:\codedragon\wireless01.pcap
+2015-09-10 오후 1:40:39 - Launch command: "C:\ToolSuite\Aircrack-ng\aircrack-ng.exe" -a 1 -n 128 -s C:\codedragon\wireless01.pcap
+2015-09-10 오후 1:43:16 - Launch command: "C:\ToolSuite\Aircrack-ng\aircrack-ng.exe" -a 1 -n 128 -s C:\codedragon\wireless01.pcap C:\codedragon\wireless02.pcap
+2015-09-10 오후 1:43:38 - Application closing
+2015-09-10 오후 1:43:46 - Application starting
+2015-09-10 오후 1:43:46 - Windir: C:\WINDOWS
+2015-09-10 오후 1:43:46 - Aircrack-ng GUI v1.0.0.6
+2015-09-10 오후 1:43:51 - Launch command: "C:\ToolSuite\Aircrack-ng\aircrack-ng.exe" -a 1 -n 128 -s C:\codedragon\wireless02.pcap
+2015-09-10 오후 6:13:20 - Application closing
