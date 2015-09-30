@@ -1,0 +1,104 @@
+SetACL by Helge Klein
+
+Homepage:   http://helgeklein.com/
+Copyright:  Helge Klein
+License:    Freeware
+
+-V-E-R-S-I-O-N--3.0.6.0-----------------------------------------------------------------------
+
+a) Bugfixes
+
+-  Using actions 'ace' and 'rstchldrn' in one command would still cause a crash.
+
+-V-E-R-S-I-O-N--3.0.5.0-----------------------------------------------------------------------
+
+a) Bugfixes
+
+-  Using actions 'ace' and 'rstchldrn' in one command would cause a crash.
+
+-  Certain printer permissions could not be set: 'man_docs' and 'full'.
+
+-  It was not possible to set SET_AUDIT_FAILURE and SET_AUDIT_SUCCESS at the same time.
+
+-  Qualifiers like "NT SERVICE" could not be used when specifying trustees. This works now.
+   Example: "NT SERVICE\LanManServer" (service account of the server service).
+   
+-V-E-R-S-I-O-N--3.0.4.0-----------------------------------------------------------------------
+
+a) Bugfixes
+
+-  Fixed resetting child object's permissions
+   
+-V-E-R-S-I-O-N--3.0.3.0-----------------------------------------------------------------------
+
+a) Bugfixes
+
+-  Fixed processing of the command line arguments without parameters (-help, -ignoreerr, 
+   -silent and -raw)
+   
+-  Fixed action domain
+
+-V-E-R-S-I-O-N--3.0.2.0-----------------------------------------------------------------------
+
+a) Changes
+
+-  Much more detailed log output than in version 2.x
+
+b) Bugfixes
+
+-  Fixed bugs in account name to SID lookup
+
+-  Added missing log output (if param -log specified)
+
+-V-E-R-S-I-O-N--3.0.1.0-----------------------------------------------------------------------
+
+a) Bugfixes
+
+-  Due to an incorrect OS version check SetACL 3.0 would not run on Windows XP or Server 2003.
+
+-V-E-R-S-I-O-N--3.0.0.0-----------------------------------------------------------------------
+
+a) New features
+
+-  Orphaned SID listing: SetACL can now list objects with orphaned SIDs only, i.e. SIDs that
+   cannot be resolved. To enable this, add the parameter "oo:y" to the list options.
+
+-  Orphaned SID removal: delete ACEs with SIDs from users/groups that no longer exist.
+   
+-  Auto-detection of SIDs: it is no longer necessary to specify whether a name passed in is
+   actually a name or a SID. SIDs are not auto-detected.
+
+-  Action trustee: a list of trustees to be removed/replaced/copied can be read from a CSV
+   file.
+   
+-  Action trustee: trustees can now be replaced/copied in owner and primary group, too, in
+   addition to ACL.
+   
+-  Action domain: trustees can now be replaced/copied in owner and primary group, too, in
+   addition to ACL.
+   
+b) Changes
+
+-  Much smaller executable size than before
+
+-  License change from LGPL to freeware
+
+-  Listing permissions: In tabular format object names are printed in humanly readable way now
+   E.g. "D:\" instead of "\\?\D:\"
+
+-  Listing permissions: Output for an object is printed only if there is something to print.
+   Previously listing permissions for an entire volume would generate 99% entries stating
+   that there are no implicit permissions.
+   The listing process is also much faster now since the output would consume most of the
+   time.
+   
+-  Default list format changed from CSV to tabular.
+
+c) Bugfixes
+
+-  When setting permissions on shares, existing share comments were deleted.
+
+-  In earlier versions, SetACL tried to follow DFS links. This may have worked in some, but
+   not all cases. Now DFS links are not followed any more. This behavior is similar to
+   how SetACL processes junctions or symbolic links.
+   Note: the link directory itself can be processed by SetACL, just not the link target.

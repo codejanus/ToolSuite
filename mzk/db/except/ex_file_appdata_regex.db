@@ -1,0 +1,2 @@
+LENOVO-[0-9]\{1,5\}\.VBS
+~~~~~~~~~~ MZK EXCEPT EX_FILE_APPDATA_REGEX.DB ~~~~~~~~~~

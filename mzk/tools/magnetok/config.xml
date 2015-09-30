@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="EUC-KR" ?>
+<config version="0.2">
+    <userstring />
+    <scrollmode autoscroll="0" />
+    <opacity value="100" />
+    <skin path="mzk.zip" />
+    <scrollbutton display="0" />
+    <sound type="0" />
+    <displaykey type="2" />
+</config>

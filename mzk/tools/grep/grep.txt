@@ -1,0 +1,183 @@
+Grep Version 2.0
+
+SYNOPOSIS
+grep [-[[AB] ]<num>] [-[CEFGLSVbchilnqsvwx?]] [-[ef]] <expr> [<files...>]
+
+DESCRIPTION
+
+Grep searches the named input files (or standard input if no files are named, or
+the file name - is given) for lines containing a match to the given pattern.
+By default, grep prints the matching lines.  There are three major variants of
+grep, controlled by the following options.
+
+-G Interpret pattern as a basic regular expression (see below).  This is 
+the default.  
+
+-E Interpret pattern as an extended regular expression (see below).  
+
+-F Interpret pattern as a list of fixed strings, separated by newlines, 
+any of which is to be matched.  
+
+In addition, two variant programs egrep and fgrep are available.  Egrep is 
+similiar (but not identical) to "grep -E", and is compatible with the 
+historical Unix egrep.  Fgrep is the same as "grep -F".  
+
+All variants of grep understand the following options: 
+
+-num Matches will be printed with num lines of leading and trailing 
+context.  However, grep will never print any given line more than once.  
+
+-A "num" Print num lines of trailing context after matching lines.  
+
+-B "num" Print num lines of leading context before matching lines.  
+
+-C Equivalent to -2.  
+
+-S Search subdirectories.
+
+-V Print the version number of grep to standard error.  This version 
+number should be included in all bug reports (see below).  
+
+-b Print the byte offset within the input file before each line of output.  
+
+-c Suppress normal output; instead print a count of matching lines for 
+each input file.  With the -v option (see below), count non-matching 
+lines.  
+
+-e "pattern" Use pattern as the pattern; useful to protect patterns 
+beginning with -.  
+
+-f "file" Obtain the pattern from file.  
+
+-h Suppress the prefixing of filenames on output when multiple files are 
+searched.  
+
+-i Ignore case distinctions in both the pattern and the input files.  
+
+-L Suppress normal output; instead print the name of each input file from 
+which no output would normally have been printed.  
+
+-l Suppress normal output; instead print the name of each input file from 
+which output would normally have been printed.  
+
+-n Prefix each line of output with the line number within its input file.  
+
+-q Quiet; suppress normal output.  
+
+-s Suppress error messages about nonexistent or unreadable files.  
+
+-v Invert the sense of matching, to select non-matching lines.  
+
+-w Select only those lines containing matches that form whole words.  The 
+test is that the matching substring must either be at the beginning of the 
+line, or preceded by a non-word constituent character.  Similarly, it must 
+be either at the end of the line or followed by a non-word constituent 
+character.  Word-constituent characters are letters, digits, and the 
+underscore.  
+
+-x Select only those matches that exactly match the whole line.  
+
+-? Displays help summary
+
+
+REGULAR EXPRESSIONS
+
+A regular expression is a pattern that describes a set of strings.
+Regular expressions are constructed analagously to arithmetic
+expressions, by using various operators to combine smaller expressions.
+
+Grep understands two different versions of regular expression syntax:
+``basic'' and ``extended.'' In "GNU" grep, there is no difference in
+available functionality using either syntax.  In other implementations,
+basic regular expressions are less powerful.  The following description
+applies to extended regular expressions; differences for basic regular
+expressions are summarized afterwards.
+
+The fundamental building blocks are the regular expressions that match a
+single character.  Most characters, including all letters and digits, are
+regular expressions that match themselves.  Any metacharacter with special
+meaning may be quoted by preceding it with a backslash.
+
+A list of characters enclosed by [ and ] matches any single character in
+that list; if the first character of the list is the caret ^ then it
+matches any character not in the list.
+
+For example, the regular expression [0123456789] matches any single digit.
+A range of ASCII characters may be specified by giving the first and last
+characters, separated by a hyphen.
+
+Finally, certain named classes of characters are predefined.  Their names
+are self explanatory, and they are
+ [:alnum:], [:alpha:], [:cntrl:], [:digit:], [:graph:], [:lower:],
+ [:print:], [:punct:], [:space:], [:upper:], and [:xdigit:].
+
+For example, [[:alnum:]] means [0-9A-Za-z], except the latter form is
+dependent upon the ASCII character encoding, whereas the former is
+portable.  (Note that the brackets in these class names are part of the
+symbolic names, and must be included in addition to the brackets
+delimiting the bracket list.) Most metacharacters lose their special
+meaning inside lists.  To include a literal ] place it first in the list.
+Similarly, to include a literal ^ place it anywhere but first.  Finally,
+to include a literal - place it last.
+
+The period . matches any single character.  The symbol \w is a synonym for
+[[:alnum:]] and \W is a synonym for [^[:alnum]].
+
+The caret ^ and the dollar sign $ are metacharacters that respectively
+match the empty string at the beginning and end of a line.  The symbols
+\< and \> respectively match the empty string at the beginning and end
+of a word.  The symbol \b matches the empty string at the edge of a word,
+and \B matches the empty string provided it's not at the edge of a word.
+
+A regular expression matching a single character may be followed
+by one of several repetition operators:
+?      The preceding item is optional and matched at most once.
+*      The preceding item will be matched zero or more times.
++      The preceding item will be matched one or more times.
+{ n }  The preceding item is matched exactly n times.
+{ n,}  The preceding item is matched n or more times.
+{,m }  The preceding item is optional and is matched at most m times.
+{ n,m} The preceding item is matched at least n times, but not more than
+       m times.
+
+Two regular expressions may be concatenated; the resulting regular
+expression matches any string formed by concatenating two substrings that
+respectively match the concatenated subexpressions.
+
+Two regular expressions may be joined by the infix operator |; the
+resulting regular expression matches any string matching either
+subexpression.
+
+Repetition takes precedence over concatenation, which in turn
+takes precedence over alternation.  A whole subexpression may be
+enclosed in parentheses to override these precedence rules.
+
+The backreference \n, where n is a single digit, matches the substring
+previously matched by the nth parenthesized subexpression of the regular
+expression.
+
+In basic regular expressions the metacharacters ?, +, {, |, (, and ) lose
+their special meaning; instead use the backslashed versions \?, \+, \{,
+\|, \(, and \).
+
+In egrep the metacharacter { loses its special meaning; instead use \{ .
+
+DIAGNOSTICS
+
+Normally, exit status is 0 if matches were found, and 1 if no matches were
+found.  (The -v option inverts the sense of the exit status.) Exit status
+is 2 if there were syntax errors in the pattern, inaccessible input files,
+or other system errors.
+
+BUGS
+
+Email bug reports to bug-gnu-utils@prep.ai.mit.edu .  Be sure to include
+the word ``grep'' somewhere in the ``Subject:'' field.
+
+Large repetition counts in the { m,n } construct may cause grep to use
+lots of memory.  In addition, certain other obscure regular expressions
+require exponential time and space, and may cause grep to run out of
+memory.
+
+Backreferences are very slow, and may require exponential time.
+

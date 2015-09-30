@@ -1,0 +1,19 @@
+CODEODE COMMAND LINE ENCRYPT SOFTWARE FREE VERSION. END-USER SOFTWARE LICENSE AGREEMENT
+
+YOU SHOULD CAREFULLY READ THE FOLLOWING TERMS AND CONDITIONS BEFORE USING THE SOFTWARE, ALONG WITH ANY ACCOMPANYING DOCUMENTATION (THE SOFTWARE AND ITS DOCUMENTATION WILL BE REFERRED TO HEREIN AS THE "SOFTWARE").
+
+YOUR USE OF THE SOFTWARE MEANS THAT YOU ACCEPT THESE TERMS AND CONDITIONS.  IF YOU DO NOT AGREE WITH THESE TERMS AND CONDITIONS, THEN CODEODE IS UNWILLING TO LICENSE THE SOFTWARE TO YOU, AND YOU SHOULD NOT USE THE SOFTWARE.  BY INSTALLING, DOWNLOADING, COPYING, OR OTHERWISE USING THE SOFTWARE, YOU ACKNOWLEDGE THAT YOU HAVE READ THESE TERMS AND CONDITIONS, UNDERSTAND THEM, AND AGREE TO BE BOUND BY THEM.  IF YOU DO NOT AGREE TO THESE TERMS AND CONDITIONS, YOU ARE NOT AUTHORIZED AND MAY NOT USE THE SOFTWARE.
+
+1.  DISTRIUBUTION OF THIS SOFTWARE. You are granted a license to use this free version. You are allowed to distribute this free version to others, provided that it is distributed in its entirety with no modifications, you don't charge anything for it and you make it clear that it is a free version. 
+
+2.  TERMINATION OF THIS LICENSE.  Codeode may terminate this license at any time if you are in breach of any of these terms and conditions of use.  Upon such termination you must and agree to immediately destroy all copies of the SOFTWARE.
+
+3.  DISCLAIMER.  THE SOFTWARE IS PROVIDED "AS-IS."  CODEODE MAKES NO REPRESENTATIONS OR WARRANTIES OF ANY KIND, EXPRESS OR IMPLIED, AS TO THE SOFTWARE OR ITS OPERATION.  TO THE FULL EXTENT PERMISSIBLE BY APPLICABLE  LAW, CODEODE DISCLAIMS ALL WARRANTIES, EXPRESS OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE, AND ANY WARRANTIES OF NON-INFRINGEMENT.  SOME JURISDICTIONS DO NOT ALLOW OR OTHERWISE GOVERN THE SCOPE OF EXCLUSIONS OF IMPLIED WARRANTIES, SO THE ABOVE EXCLUSIONS MAY NOT APPLY IN FULL.
+
+4.  LIMITATION ON DAMAGES.  IN NO EVENT SHALL CODEODE BE LIABLE TO ANY PARTY FOR DIRECT, INDIRECT, SPECIAL OR OTHER CONSEQUENTIAL OR INCIDENTAL DAMAGES ARISING DIRECTLY OR INDIRECTLY FROM THE USE OF THE SOFTWARE, INCLUDING BUT NOT LIMITED TO ANY LOST PROFITS, BUSINESS INTERRUPTION, LOSS OF PROGRAMS OR OTHER DATA ON YOUR INFORMATION HANDLING SYSTEM OR OTHERWISE, EVEN IF CODEODE, INC. HAS BEEN EXPRESSLY ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.
+
+5.  You acknowledge that you are solely responsible for any liability that may arise by using this SOFTWARE.
+
+6.  SUPPORT SERVICES. Codeode may, but is not obligated to, provide you with support services related to the SOFTWARE. Any supplemental SOFTWARE code provided to you as part of the Support Services shall be considered part of the SOFTWARE and subject to the terms and conditions of this license. With respect to technical information you provide to Codeode as part of the Support Services, Codeode may use such information for its business purposes, including for product support and development.
+
+7.  HIGH RISK ACTIVITIES. The SOFTWARE is not fault-tolerant and is not designed, manufactured or intended for use or resale as on-line control equipment in hazardous environments requiring fail-safe performance, such as in the operation of nuclear facilities, aircraft navigation or communication systems, air traffic control, direct life support machines, or weapons systems, in which the failure of the SOFTWARE could lead directly to death, personal injury, or severe physical or environmental damage ("High Risk Activities"). Accordingly, Codeode and its suppliers specifically disclaim any express or implied warranty of fitness for High Risk Activities. Licensee agrees that Codeode and its suppliers will not be liable for any claims or damages arising from the use of the SOFTWARE in such applications.
