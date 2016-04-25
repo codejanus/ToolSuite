@@ -1,0 +1,1 @@
+..\win64dd.exe /j ..\logs\%COMPUTERNAME%.log /d /f ..\dumps\%COMPUTERNAME%.dmp /a
